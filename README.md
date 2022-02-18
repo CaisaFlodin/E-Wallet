@@ -5,12 +5,7 @@ Andrée
 försöker förstå git
 testar att ändra
 
-Caisa strugglar
-
-<<<<<<< HEAD
-
-Caisa
-
+Caisa strugglar! 
 
 
 Asami:
