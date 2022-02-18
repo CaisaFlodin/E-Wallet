@@ -1,11 +1,9 @@
 Oscar:
 Provar git
 
-Andrée 
+Andrée
 försöker förstå git
 
-Caisa
-
-
+Caisa strugglar
 
 Asami
