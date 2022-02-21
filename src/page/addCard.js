@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Link,useHistory } from "react-router-dom";
+import { useDispatch, } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 
 const addCard = () => {
@@ -20,7 +20,9 @@ const addCard = () => {
             ccv = ccv,
             vendorName = vendor,
          };
-        // Behöver fixa så att man skickar iväg kortet, kolla på det senare.
+        // Behöver fixa så att man skickar iväg kortet, och kommer tillbaka till förstasidan.
+        dispatch(addCards(newCard));
+        history.push("/")
     }
 
 
@@ -71,14 +73,21 @@ return (
             id="vendor"
             onChange={(e) => setVendor(e.target.value)}
           >
-            <option value="oscar">Hederlig Banking</option>
-            <option value="asami">KANO</option>
-            <option value="caisa">Flodinvest</option>
-            <option value="andree">AK Banking</option>
+            <option id="oscar" value="oscar">Hederlig Banking</option>
+            <option id="asami" value="asami">KANO</option>
+            <option id="caisa" value="caisa">Flodinvest</option>
+            <option id="andree" value="andree">AK Banking</option>
           </select>
         </div>
-
+        <div>
+        <Link to="/">
+        <button onClick={addCard}> Lägg till kort.</button>
+        </Link>
+      </div>
         
     </div>
-)
-}
+);
+
+};
+
+export {addCard}
