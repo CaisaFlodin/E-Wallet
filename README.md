@@ -2,8 +2,7 @@ Oscar:
 Added, Route-comp
 
 Andrée
-försöker förstå git
-testar att ändra
+La till provider och store i index.css, samt la till redux map
 
 Caisa strugglar!!
 
