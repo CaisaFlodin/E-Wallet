@@ -4,7 +4,7 @@ import { useState } from "react";
 import { addNewCard } from "../redux/slices/cardSlice";
 
 const AddCard = () => {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const [cardNumber, setCardNumber] = useState("");
