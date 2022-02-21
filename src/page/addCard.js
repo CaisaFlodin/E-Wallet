@@ -21,7 +21,7 @@ const addCard = () => {
             vendorName = vendor,
          };
         // Behöver fixa så att man skickar iväg kortet, och kommer tillbaka till förstasidan.
-        dispatch(addCards(newCard));
+        dispatch(addCard(newCard));
         history.push("/")
     }
 
