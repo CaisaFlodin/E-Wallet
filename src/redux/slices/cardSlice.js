@@ -1,3 +1,23 @@
-import {createSlice} from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-export default createSlice
+const initialState = {
+  cardInfo: [
+    {
+      cardFirstname: "",
+      cardLastname: "",
+      cardNumber: "1234567899999999",
+      cardMonth: "01",
+      cardYear: "22",
+      cvc: "123",
+      vendor: "Visa",
+      cardActive: true,
+    },
+  ],
+};
+const cardSlice = createSlice({
+  name: "card",
+  initialState,
+  reducers: {},
+});
+
+export default createSlice.reducer;
