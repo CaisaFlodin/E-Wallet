@@ -19,9 +19,11 @@ const cardSlice = createSlice({
   initialState,
   reducers: {
     addCard: (state, action) => {
-      state.cardInfo = action.payload;
+      state.cardInformation.concat(action.payload);
     },
   },
 });
 
-export default createSlice.reducer;
+export const { addCard } = cardSlice.actions;
+
+export default cardSlice.reducer;
