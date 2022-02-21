@@ -3,8 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cardInfo: [
     {
-      cardFirstname: "",
-      cardLastname: "",
+      cardHolder: "",
       cardNumber: "1234567899999999",
       cardMonth: "01",
       cardYear: "22",
@@ -19,12 +18,12 @@ const cardSlice = createSlice({
   name: "card",
   initialState,
   reducers: {
-    addCard: (state, action) => {
-      state.cardInformation.concat(action.payload);
+    addNewCard: (state, action) => {
+      state.cardInfo.concat(action.payload);
     },
   },
 });
 
-export const { addCard } = cardSlice.actions;
+export const { addNewCard } = cardSlice.actions;
 
 export default cardSlice.reducer;
