@@ -14,6 +14,7 @@ const initialState = {
     },
   ],
 };
+// concat används i slicen, om det ej funkar så kanske push funkar
 const cardSlice = createSlice({
   name: "card",
   initialState,
