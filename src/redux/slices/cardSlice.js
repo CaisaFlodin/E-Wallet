@@ -3,9 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cardInfo: [
     {
-      cardHolder: "Kalle Anka",
+      cardHolderFirst:"Kalle",
+      cardHolderLast: "Anka",
       cardNumber: "1234 5678 9999 9999",
-      validThru: "02/12",
+      validThruMonth: "02",
+      validThruYear: "22",
       cvc: "123",
       vendor: "Visa",
       

@@ -8,16 +8,22 @@ const AddCard = () => {
   const history = useHistory();
 
   const [cardNumber, setCardNumber] = useState("");
-  const [cardHolder, setCardholder] = useState("");
-  const [validThru, setVaildThru] = useState("");
+  const [cardHolderFirst, setCardholderFirst] = useState("");
+
+  const [cardHolderLast, setCardholderLast] = useState("");
+
+  const [validMonth, setVaildMonth] = useState("");
+  const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState("");
   const [vendor, setVendor] = useState("");
 
   const createCard = () => {
     let newCard = {
       number: cardNumber,
-      owner: cardHolder,
-      valid: validThru,
+      firstName: cardHolderFirst,
+      lastName: cardHolderLast,
+      validMonth: validThruMonth,
+      validYear: validThruYear,
       cvc: cvc,
       vendorName: vendor,
     };
@@ -33,8 +39,10 @@ const AddCard = () => {
       <h5>New card</h5>
       <div id="cardBox">
         <p>{cardNumber}</p>
-        <p>{cardHolder}</p>
-        <p>{validThru}</p>
+        <p>{cardHolderFirst}</p>
+        <p>{cardHolderLast}</p>
+        <p>{validThruMonth}</p>
+        <p>{validThruYear}</p>
         <p>{cvc}</p>
         <p>{vendor}</p>
       </div>
@@ -57,7 +65,7 @@ const AddCard = () => {
           type="text"
           id="textInput"
           placeholder="First and Lastname"
-          onChange={(e) => setCardholder(e.target.value)}
+          onChange={(e) => setCardholderFirst(e.target.value)}
         />
       </div>
       {/* box för att skriva in när kortet validitet slutar fungerar */}
