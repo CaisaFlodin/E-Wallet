@@ -50,9 +50,8 @@ const AddCard = () => {
         {/* Box för att skriva numerna manuelt */}
         <label htmlFor="numberInput">Card number</label>
         <input
-          type="number"
-          id="numberInput"
-          maxLength={16}
+          type="tel"
+          maxlength = "16"
           placeholder="Numbers only"
           onChange={(e) => setCardNumber(e.target.value)}
         />
@@ -80,7 +79,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="validMonth">Month</label>
         <input
-          type="number"
+          type="tel"
           id="validMonth"
           placeholder="Month"
           maxLength={2}
@@ -90,7 +89,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="validYear">Year</label>
         <input
-          type="number"
+          type="tel"
           id="validYear"
           placeholder="Year"
           maxLength={2}
@@ -102,7 +101,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="cvc">Security code</label>
         <input
-          type="number"
+          type="tel"
           id="cvc"
           placeholder="ex 123"
           maxLength={3}
