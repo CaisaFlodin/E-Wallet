@@ -15,20 +15,21 @@ const AddCard = () => {
   const [cvc, setCvc] = useState("");
   const [vendor, setVendor] = useState("");
 
-  const createCard = () => {
-    let newCard = {
-      number: cardNumber,
-      firstName: cardHolderFirst,
-      lastName: cardHolderLast,
-      validMonth: validMonth,
-      validYear: validYear,
-      cvc: cvc,
-      vendorName: vendor,
-    };
+  const createCard = () => [{
+    // let newCard = {
+      
+      number = cardNumber,
+      firstName = cardHolderFirst,
+      lastName = cardHolderLast,
+      validMonth = validMonth,
+      validYear = validYear,
+      cvc = cvc,
+      vendorName = vendor,
+    // };
     // Behöver fixa så att man skickar iväg kortet, och kommer tillbaka till förstasidan.
     // dispatch(createCard(newCard));
     // history.push("/");
-  };
+  }];
 
   return (
     <div>
