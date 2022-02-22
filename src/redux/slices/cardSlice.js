@@ -11,6 +11,7 @@ const initialState = {
       cvc: "123",
       vendor: "Visa",
     },
+    {},
   ],
   cardActive: true,
 };

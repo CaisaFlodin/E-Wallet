@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+// import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { addNewCard } from "../redux/slices/cardSlice";
 
 const AddCard = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const [cardNumber, setCardNumber] = useState("");
   const [cardFirstName, setCardFirstName] = useState("");
@@ -64,7 +64,7 @@ const AddCard = () => {
         <p>{cvc}</p>
         <p>{vendor}</p>
       </div>
-      //
+
       <div>
         {/* Box för att skriva numerna manuelt */}
         <label htmlFor="numberInput">Card number</label>
