@@ -9,9 +9,7 @@ const AddCard = () => {
 
   const [cardNumber, setCardNumber] = useState("");
   const [cardHolderFirst, setCardholderFirst] = useState("");
-
   const [cardHolderLast, setCardholderLast] = useState("");
-
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState("");
@@ -22,8 +20,8 @@ const AddCard = () => {
       number: cardNumber,
       firstName: cardHolderFirst,
       lastName: cardHolderLast,
-      validMonth: validThruMonth,
-      validYear: validThruYear,
+      validMonth: validMonth,
+      validYear: validYear,
       cvc: cvc,
       vendorName: vendor,
     };
@@ -60,25 +58,45 @@ const AddCard = () => {
       </div>
       {/* Box för att skriva in namnet på ägaren av kortet */}
       <div>
-        <label htmlFor="textInput">Name of Cardholder</label>
+        <label htmlFor="firstnamet">Firstname</label>
         <input
           type="text"
-          id="textInput"
-          placeholder="First and Lastname"
+          id="firstnamet"
+          placeholder="Firstname"
           onChange={(e) => setCardholderFirst(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="Lastname">Lastname</label>
+        <input
+          type="text"
+          id="Lastname"
+          placeholder="Lastname"
+          onChange={(e) => setCardholderLastt(e.target.value)}
         />
       </div>
       {/* box för att skriva in när kortet validitet slutar fungerar */}
       <div>
-        <label htmlFor="valid">Valid until</label>
+        <label htmlFor="validMonth">Month</label>
         <input
           type="number"
-          id="valid"
-          placeholder="MM/YY"
-          maxLength={5}
-          onChange={(e) => setVaildThru(e.target.value)}
+          id="validMonth"
+          placeholder="Month"
+          maxLength={2}
+          onChange={(e) => validThruMonth(e.target.value)}
         />
       </div>
+      <div>
+        <label htmlFor="validYear">Year</label>
+        <input
+          type="number"
+          id="validYear"
+          placeholder="Year"
+          maxLength={2}
+          onChange={(e) => validThruYear(e.target.value)}
+        />
+      </div>
+
       {/* Box för säkerhets nummerna */}
       <div>
         <label htmlFor="cvc">Security code</label>
