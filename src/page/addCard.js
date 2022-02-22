@@ -18,13 +18,13 @@ const AddCard = () => {
   const createCard = () => [{
     // let newCard = {
       
-      number = cardNumber,
-      firstName = cardHolderFirst,
-      lastName = cardHolderLast,
-      validMonth = validMonth,
-      validYear = validYear,
-      cvc = cvc,
-      vendorName = vendor,
+      number: cardNumber,
+      firstName: cardHolderFirst,
+      lastName: cardHolderLast,
+      validMonth: validMonth,
+      validYear: validYear,
+      cvc: cvc,
+      vendorName: vendor,
     // };
     // Behöver fixa så att man skickar iväg kortet, och kommer tillbaka till förstasidan.
     // dispatch(createCard(newCard));
@@ -40,12 +40,12 @@ const AddCard = () => {
         <p>{cardNumber}</p>
         <p>{cardHolderFirst}</p>
         <p>{cardHolderLast}</p>
-        <p>{validThruMonth}</p>
-        <p>{validThruYear}</p>
+        <p>{validMonth}</p>
+        <p>{validYear}</p>
         <p>{cvc}</p>
         <p>{vendor}</p>
       </div>
-      //
+
       <div>
         {/* Box för att skriva numerna manuelt */}
         <label htmlFor="numberInput">Card number</label>
