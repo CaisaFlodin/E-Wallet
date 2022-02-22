@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cardInfo: [
     {
-      cardHolder: "",
-      cardNumber: "1234567899999999",
-      cardMonth: "01",
-      cardYear: "22",
+      cardHolder: "Kalle Anka",
+      cardNumber: "1234 5678 9999 9999",
+      validThru: "02/12",
       cvc: "123",
       vendor: "Visa",
-      cardActive: true,
+      
     },
   ],
+  cardActive: true,
 };
 // concat används i slicen, om det ej funkar så kanske push funkar
 const cardSlice = createSlice({
