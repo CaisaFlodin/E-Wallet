@@ -3,14 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cardInfo: [
     {
-      cardHolderFirst:"Kalle",
-      cardHolderLast: "Anka",
+      cardFirstName: "Kalle",
+      cardLastName: "Anka",
       cardNumber: "1234 5678 9999 9999",
-      validThruMonth: "02",
-      validThruYear: "22",
+      validMonth: "02",
+      validYear: "22",
       cvc: "123",
       vendor: "Visa",
-      
     },
   ],
   cardActive: true,
@@ -21,7 +20,7 @@ const cardSlice = createSlice({
   initialState,
   reducers: {
     addNewCard: (state, action) => {
-      state.cardInfo.concat(action.payload);
+      return { ...state, cardInfo: [...state.cardInfo, action.payload] };
     },
   },
 });
