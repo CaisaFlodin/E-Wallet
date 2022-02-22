@@ -69,7 +69,7 @@ const AddCard = () => {
         {/* Box för att skriva numerna manuelt */}
         <label htmlFor="numberInput">Card number</label>
         <input
-          type="number"
+          type="tel"
           id="numberInput"
           maxLength={16}
           placeholder="Numbers only"
@@ -99,7 +99,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="validMonth">Month</label>
         <input
-          type="number"
+          type="tel"
           id="validMonth"
           placeholder="Month"
           maxLength={2}
@@ -109,7 +109,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="validYear">Year</label>
         <input
-          type="number"
+          type="tel"
           id="validYear"
           placeholder="Year"
           maxLength={2}
@@ -120,7 +120,7 @@ const AddCard = () => {
       <div>
         <label htmlFor="cvc">Security code</label>
         <input
-          type="number"
+          type="tel"
           id="cvc"
           placeholder="ex 123"
           maxLength={3}
@@ -131,16 +131,16 @@ const AddCard = () => {
       <div>
         <label htmlFor="vendor">Vendor</label>
         <select id="vendor" onChange={(e) => setVendor(e.target.value)}>
-          <option id="oscar" value="oscar">
+          <option id="oscar" value="Hederlig Banking">
             Hederlig Banking
           </option>
-          <option id="asami" value="asami">
+          <option id="asami" value="KANO">
             KANO
           </option>
-          <option id="caisa" value="caisa">
+          <option id="caisa" value="FlodInvest">
             FlodInvest
           </option>
-          <option id="andree" value="andree">
+          <option id="andree" value="AK Banking">
             AK Banking
           </option>
         </select>
