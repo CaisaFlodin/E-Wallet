@@ -6,6 +6,7 @@ import AddCard from "./page/AddCard";
 function App() {
   return (
     <div className="App">
+      
       <Switch>
         <Route path="/add/" render={(props) => <AddCard {...props} />} />
         <Route path="/" render={(props) => <Homepage {...props} />} />
