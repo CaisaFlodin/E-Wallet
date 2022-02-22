@@ -37,13 +37,14 @@ const AddCard = () => {
       <h1>Add a new card</h1>
       <h5>New card</h5>
       <div id="cardBox">
+        <h5>{vendor}</h5>
         <p>{cardNumber}</p>
         <p>{cardHolderFirst}</p>
         <p>{cardHolderLast}</p>
         <p>{validMonth}</p>
         <p>{validYear}</p>
         <p>{cvc}</p>
-        <p>{vendor}</p>
+        
       </div>
 
       <div>
@@ -82,6 +83,7 @@ const AddCard = () => {
           type="tel"
           id="validMonth"
           placeholder="Month"
+          min="1" max="12"
           maxLength={2}
           onChange={(e) => setVaildMonth(e.target.value)}
         />
@@ -92,6 +94,7 @@ const AddCard = () => {
           type="tel"
           id="validYear"
           placeholder="Year"
+          min="22"
           maxLength={2}
           onChange={(e) => setVaildYear(e.target.value)}
         />
@@ -112,16 +115,16 @@ const AddCard = () => {
       <div>
         <label htmlFor="vendor">Vendor</label>
         <select id="vendor" onChange={(e) => setVendor(e.target.value)}>
-          <option id="oscar" value="oscar">
+          <option id="oscar" value="Hederlig Banking">
             Hederlig Banking
           </option>
-          <option id="asami" value="asami">
+          <option id="asami" value="KANO">
             KANO
           </option>
-          <option id="caisa" value="caisa">
+          <option id="caisa" value="FlodInvest">
             FlodInvest
           </option>
-          <option id="andree" value="andree">
+          <option id="andree" value="AK Banking">
             AK Banking
           </option>
         </select>
