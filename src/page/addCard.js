@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addNewCard } from "../redux/slices/cardSlice";
 
 const AddCard = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-
+ 
   const [cardNumber, setCardNumber] = useState("");
   const [cardHolderFirst, setCardholderFirst] = useState("");
   const [cardHolderLast, setCardholderLast] = useState("");
@@ -35,7 +34,6 @@ const AddCard = () => {
     <div>
       {/* Kort box där all info skrivs ut */}
       <h1>Add a new card</h1>
-      <h5>New card</h5>
       <div id="cardBox">
         <h5>{vendor}</h5>
         <p>{cardNumber}</p>
