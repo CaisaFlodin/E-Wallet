@@ -72,7 +72,7 @@ const AddCard = () => {
           type="text"
           id="Lastname"
           placeholder="Lastname"
-          onChange={(e) => setCardholderLastt(e.target.value)}
+          onChange={(e) => setCardholderLast(e.target.value)}
         />
       </div>
       {/* box för att skriva in när kortet validitet slutar fungerar */}
@@ -83,7 +83,7 @@ const AddCard = () => {
           id="validMonth"
           placeholder="Month"
           maxLength={2}
-          onChange={(e) => validThruMonth(e.target.value)}
+          onChange={(e) => setVaildMonth(e.target.value)}
         />
       </div>
       <div>
@@ -93,7 +93,7 @@ const AddCard = () => {
           id="validYear"
           placeholder="Year"
           maxLength={2}
-          onChange={(e) => validThruYear(e.target.value)}
+          onChange={(e) => setVaildYear(e.target.value)}
         />
       </div>
 
