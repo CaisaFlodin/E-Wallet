@@ -12,6 +12,7 @@ const Cards = () => {
         <h2>This card is Active</h2>
         {cardList.map((card, i) => {
           return (
+            <div key={i}>
             <Card
               cardNumber={card.cardNumber}
               cardFirstName={card.cardFirstName}
@@ -23,6 +24,7 @@ const Cards = () => {
               id={card.id}
               isActive={card.isActive}
             />
+            </div>
           );
         })}
         {cardList.length <= 3 ? (
