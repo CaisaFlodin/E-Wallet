@@ -1,29 +1,42 @@
-import Cards from "./Card";
-const card = (props) => {
-  console.log(props);
+import Card from "./Card";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+const Cards = () => {
+  const { cardList } = useSelector((state) => state.cards);
+
+  console.log(cardList);
   return (
-    <div id="container">
-      <h4> Here will be the defult card from slice</h4>
-      <div className="card">
-        {props.cardInfo.length > 4 ? (
-          alert("You have already 4 cards")
+    <>
+      <div>
+        <h2>This card is Active</h2>
+        {cardList.map((card, i) => {
+          return (
+            <Card
+              cardNumber={card.cardNumber}
+              cardFirstName={card.cardFirstName}
+              cardLastName={card.cardLastName}
+              validMonth={card.validMonth}
+              validYear={card.validYear}
+              cvc={card.cvc}
+              vendor={card.vendor}
+              id={card.id}
+              isActive={card.isActive}
+            />
+          );
+        })}
+        {cardList.length <= 3 ? (
+          <Link to={"/add/"}>
+            <button>Add a new card</button>
+          </Link>
         ) : (
-          <ul>
-            {props.cardInfo.map((card) => (
-              <Cards {...card} firstName={card.cardFirstName} />
-            ))}
-          </ul>
+          <p>
+            Your wallet have the maximum amount of 4 cards. Remove cards to add
+            a new one.
+          </p>
         )}
-        {/* <h5>{props.vendor}</h5>
-        <p>{cardNumber}</p>
-        <p>{cardHolderFirst}</p>
-        <p>{cardHolderLast}</p>
-        <p>{validMonth}</p>
-        <p>{validYear}</p>
-        <p>{cvc}</p>  */}
       </div>
-    </div>
+    </>
   );
 };
-
-export default card;
+export default Cards;

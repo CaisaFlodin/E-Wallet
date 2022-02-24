@@ -1,17 +1,41 @@
-const Cards = (props) => {
-  console.log(props);
+import { useDispatch } from "react-redux";
+import { toggleActive, removeCard } from "../redux/slices/cardSlice";
+
+const Card = ({
+  id,
+  cardFirstName,
+  cardLastName,
+  validMonth,
+  validYear,
+  cvc,
+  vendor,
+  isActive,
+}) => {
+  console.log(id, cardFirstName, isActive);
+
+  const dispatch = useDispatch();
+
+  const handleActiveClick = () => {
+    dispatch(toggleActive({ id: id, isActive: !isActive }));
+  };
+  const handleRemoveClick = () => {
+    dispatch(removeCard({ id: id }));
+  };
   return (
-    <div>
-      <span>{props.cardFirstName} {props.cardLastName}</span>
-      <br/>
-      <span>{props.cardNumber}</span>
-      <br/>
-      <span>{props.cvc}</span>
-      <br/>
-      <span>{props.validMonth}    {props.validYear}</span>
-      <br/>
-      <span>{props.vendor}</span> 
+    <div id="container">
+      <ul className="card" onClick={handleActiveClick}>
+        <li>
+          <input type="checkbox" onChange={handleRemoveClick}></input>
+        </li>
+        <li>{cardFirstName}</li>
+        <li>{cardLastName}</li>
+        <li>{validMonth}</li>
+        <li>{validYear}</li>
+        <li>{cvc}</li>
+        <li>{vendor}</li>
+      </ul>
     </div>
   );
 };
-export default Cards;
+
+export default Card;

@@ -3,7 +3,7 @@ import cardSlice from "./slices/cardSlice";
 
 const store = configureStore({
   reducer: {
-    cardInfo: cardSlice,
+    cards: cardSlice,
   },
 });
 
