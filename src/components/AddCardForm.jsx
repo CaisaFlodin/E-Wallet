@@ -123,6 +123,7 @@ const AddCardForm = () => {
         <div>
           <label htmlFor="vendor">Vendor</label>
           <select id="vendor" onChange={(e) => setVendor(e.target.value)}>
+          <option style = {{display: "none"}}></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking
             </option>
