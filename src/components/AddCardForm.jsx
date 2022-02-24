@@ -54,7 +54,7 @@ const AddCardForm = () => {
           type="text"
           id="Cardnumber"
           value={cardNumber}
-          maxlength={16}
+          maxLength={16}
           pattern="[0-9]*"
           placeholder="Numbers only"
           onChange={(e) =>  setCardNumber((v) => (e.target.validity.valid ? e.target.value : v)) }
@@ -87,7 +87,7 @@ const AddCardForm = () => {
           id="Month"
           placeholder="1-12"
           value={validMonth}
-          maxlength={2}
+          maxLength={2}
           pattern="[1-12]*"
           placeholder="Numbers only"
           onChange={(e) =>  setVaildMonth((v) => (e.target.validity.valid ? e.target.value : v)) }
@@ -100,7 +100,7 @@ const AddCardForm = () => {
           id="cvc"
           placeholder="Numbers only"
           value={validYear}
-          maxlength={2}
+          maxLength={2}
           pattern="[0-9]*"
           onChange={(e) =>  setVaildYear((v) => (e.target.validity.valid ? e.target.value : v)) }
         />
@@ -113,7 +113,7 @@ const AddCardForm = () => {
           id="cvc"
           placeholder="ex 123"
           value={cvc}
-          maxlength={3}
+          maxLength={3}
           pattern="[0-9]*"
           placeholder="Numbers only"
           onChange={(e) =>  setCvc((v) => (e.target.validity.valid ? e.target.value : v)) }
