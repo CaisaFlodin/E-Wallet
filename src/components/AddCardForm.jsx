@@ -7,12 +7,12 @@ const AddCardForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumber, setCardNumber] = useState(0);
   const [cardFirstName, setCardFirstName] = useState("");
   const [cardLastName, setCardLastName] = useState("");
-  const [validMonth, setVaildMonth] = useState("");
-  const [validYear, setVaildYear] = useState("");
-  const [cvc, setCvc] = useState("");
+  const [validMonth, setVaildMonth] = useState(0);
+  const [validYear, setVaildYear] = useState(0);
+  const [cvc, setCvc] = useState(0);
   const [vendor, setVendor] = useState("");
 
   const onSubmit = (e) => {
@@ -51,12 +51,14 @@ const AddCardForm = () => {
           {/* Box för att skriva numerna manuelt */}
           <label htmlFor="numberInput">Card number</label>
           <input
-            type="tel"
-            id="numberInput"
-            maxLength={16}
-            placeholder="Numbers only"
-            onChange={(e) => setCardNumber(e.target.value)}
-          />
+          type="text"
+          id="Cardnumber"
+          value={cardNumber}
+          maxlength={16}
+          pattern="[0-9]*"
+          placeholder="Numbers only"
+          onChange={(e) =>  setCardNumber((v) => (e.target.validity.valid ? e.target.value : v)) }
+        />
         </div>
         {/* Box för att skriva in namnet på ägaren av kortet */}
         <div>
@@ -81,34 +83,42 @@ const AddCardForm = () => {
         <div>
           <label htmlFor="validMonth">Month</label>
           <input
-            type="tel"
-            id="validMonth"
-            placeholder="Month"
-            maxLength={2}
-            onChange={(e) => setVaildMonth(e.target.value)}
-          />
+          type="text"
+          id="Month"
+          placeholder="1-12"
+          value={validMonth}
+          maxlength={2}
+          pattern="[1-12]*"
+          placeholder="Numbers only"
+          onChange={(e) =>  setVaildMonth((v) => (e.target.validity.valid ? e.target.value : v)) }
+        />
         </div>
         <div>
           <label htmlFor="validYear">Year</label>
           <input
-            type="tel"
-            id="validYear"
-            placeholder="Year"
-            maxLength={2}
-            onChange={(e) => setVaildYear(e.target.value)}
-          />
+          type="text"
+          id="cvc"
+          placeholder="Numbers only"
+          value={validYear}
+          maxlength={2}
+          pattern="[0-9]*"
+          onChange={(e) =>  setVaildYear((v) => (e.target.validity.valid ? e.target.value : v)) }
+        />
         </div>
         {/* Box för säkerhets nummerna */}
         <div>
-          <label htmlFor="cvc">Security code</label>
-          <input
-            type="tel"
-            id="cvc"
-            placeholder="ex 123"
-            maxLength={3}
-            onChange={(e) => setCvc(e.target.value)}
-          />
-        </div>
+        <label htmlFor="cvc">Security code</label>
+        <input
+          type="text"
+          id="cvc"
+          placeholder="ex 123"
+          value={cvc}
+          maxlength={3}
+          pattern="[0-9]*"
+          placeholder="Numbers only"
+          onChange={(e) =>  setCvc((v) => (e.target.validity.valid ? e.target.value : v)) }
+        />
+      </div>
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
         <div>
           <label htmlFor="vendor">Vendor</label>
