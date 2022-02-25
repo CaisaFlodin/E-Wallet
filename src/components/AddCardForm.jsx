@@ -114,7 +114,7 @@ const AddCardForm = () => {
           <label htmlFor="validMonth">Month</label>
           <select
             id="validMonth"
-            onChange={(e) => setVaildMonth(e.target.value)}
+            onChange={(e) => setVaildMonth(e.target.value +" /") }
           >
             <option value="" defaultChecked="true">
               Month
