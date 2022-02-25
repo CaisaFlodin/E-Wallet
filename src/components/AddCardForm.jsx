@@ -15,7 +15,7 @@ const AddCardForm = () => {
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
 
-  const formatAndSetcardNumber = e => {
+  const formatAndSetcardNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, "");
     let inputNumbersOnly = inputVal.replace(/\D/g, "");
     if (inputNumbersOnly.length > 16) {
@@ -28,17 +28,6 @@ const AddCardForm = () => {
     }
     setCardNumber(spacedNumber);
   };
-
-
-      
-
-
-
-
-
-
-
-
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -60,14 +49,8 @@ const AddCardForm = () => {
       <h1>Add a new card</h1>
       <h5>New card</h5>
 
-      <div id="cardBox">
-        <img
-          className="cardImg"
-          src={cardFour}
-          alt=""
-          height="400px"
-          width="634px"
-        />
+      <div className="credit-card" id="cardBox">
+        <img className="cardImg" src={cardFour} alt="" width="450px" />
         <p className="addcardNumber">{cardNumber}</p>
         <p className="addcardHolderName">{cardHolderName}</p>
         <p className="addValidMonth">{validMonth}</p>
@@ -76,10 +59,18 @@ const AddCardForm = () => {
       </div>
 
       <div className="addInputs">
-        <div>
+        <div className="addnumberImput">
           {/* Box för att skriva numerna manuelt */}
-          <label htmlFor="numberInput">Card number</label>
-      <input type="text" value={cardNumber} onChange={formatAndSetcardNumber} required />
+          <label className="card-label1" htmlFor="numberInput">
+            Card number
+          </label>
+          <input
+            className="card-input1"
+            type="text"
+            value={cardNumber}
+            onChange={formatAndSetcardNumber}
+            required
+          />
           {/* 
           <input
             type="text"
@@ -98,116 +89,133 @@ const AddCardForm = () => {
 
         {/* Box för att skriva in namnet på ägaren av kortet */}
 
-        <div>
-          <label htmlFor="cardholdername">Card Holder Name</label>
+        <div className="addnameInput">
+          <label className="card-label2" htmlFor="cardholdername">
+            Card Holder
+          </label>
           <input
-          required 
+            className="card-input2"
+            required
             type="text"
             id="cardholdername"
-            placeholder="Name"
             onChange={(e) => setCardHolderName(e.target.value)}
           />
         </div>
 
         {/* box för att skriva in när kortet validitet slutar fungerar */}
 
-        <div>
-          <label htmlFor="validMonth">Month</label>
-          <select
-            id="validMonth"
-            onChange={(e) => setVaildMonth(e.target.value +" /") }required 
-          >
-            <option value="" defaultChecked="true">
-              Month
-            </option>
-            <option id="01" value="01">
-              Jan
-            </option>
-            <option id="02" value="02">
-              Feb
-            </option>
-            <option id="03" value="03">
-              Mar
-            </option>
-            <option id="04" value="04">
-              Apr
-            </option>
-            <option id="05" value="05">
-              May
-            </option>
-            <option id="06" value="06">
-              Jun
-            </option>
-            <option id="07" value="07">
-              Jul
-            </option>
-            <option id="08" value="08">
-              Aug
-            </option>
-            <option id="09" value="09">
-              Sep
-            </option>
-            <option id="10" value="10">
-              Oct
-            </option>
-            <option id="11" value="11">
-              Nov
-            </option>
-            <option id="12" value="12">
-              Dec
-            </option>
-          </select>
-        </div>
+        <div className="addDateAndCvc">
+          <div className="expirationDate">
+            <div className="expirationMonth">
+              <label className="card-label3" htmlFor="validMonth">
+                Expiration Date
+              </label>
+              <select
+                className="card-select1"
+                id="validMonth"
+                onChange={(e) => setVaildMonth(e.target.value + " /")}
+                required
+              >
+                <option value="" defaultChecked="true">
+                  Month
+                </option>
+                <option id="01" value="01">
+                  Jan
+                </option>
+                <option id="02" value="02">
+                  Feb
+                </option>
+                <option id="03" value="03">
+                  Mar
+                </option>
+                <option id="04" value="04">
+                  Apr
+                </option>
+                <option id="05" value="05">
+                  May
+                </option>
+                <option id="06" value="06">
+                  Jun
+                </option>
+                <option id="07" value="07">
+                  Jul
+                </option>
+                <option id="08" value="08">
+                  Aug
+                </option>
+                <option id="09" value="09">
+                  Sep
+                </option>
+                <option id="10" value="10">
+                  Oct
+                </option>
+                <option id="11" value="11">
+                  Nov
+                </option>
+                <option id="12" value="12">
+                  Dec
+                </option>
+              </select>
+            </div>
+            <div className="expirationYear">
+              <label className="card-label4" htmlFor="validYear"></label>
+              <select
+                className="card-select2"
+                id="validYear"
+                onChange={(e) => setVaildYear(e.target.value)}
+                required
+              >
+                <option value="" defaultChecked="true">
+                  Year
+                </option>
+                <option id="01" value="22">
+                  2022
+                </option>
+                <option id="02" value="23">
+                  2023
+                </option>
+                <option id="03" value="24">
+                  2024
+                </option>
+                <option id="04" value="25">
+                  2025
+                </option>
+                <option id="05" value="26">
+                  2026
+                </option>
+                <option id="06" value="27">
+                  2027
+                </option>
+              </select>
+            </div>
+          </div>
 
-        <div>
-          <label htmlFor="validYear">Year</label>
-          <select id="validYear" onChange={(e) => setVaildYear(e.target.value)} required >
-            <option value="" defaultChecked="true">
-              Year
-            </option>
-            <option id="01" value="22">
-              2022
-            </option>
-            <option id="02" value="23">
-              2023
-            </option>
-            <option id="03" value="24">
-              2024
-            </option>
-            <option id="04" value="25">
-              2025
-            </option>
-            <option id="05" value="26">
-              2026
-            </option>
-            <option id="06" value="27">
-              2027
-            </option>
-          </select>
-        </div>
-
-        {/* Box för säkerhets nummerna */}
-
-        <div>
-          <label htmlFor="cvc">Security code</label>
-          <input
-          required 
-            type="text"
-            id="cvc"
-            placeholder="ex 123"
-            value={cvc}
-            maxLength={3}
-            pattern="[0-9]*"
-            placeholder="Numbers only"
-            onChange={(e) =>
-              setCvc((v) => (e.target.validity.valid ? e.target.value : v))
-            }
-          />
+          {/* Box för säkerhets nummerna */}
+          <div className="addCvc">
+            <label className="card-label5" htmlFor="cvc">
+              CVC
+            </label>
+            <input
+              className="card-input5"
+              type="text"
+              id="cvc"
+              value={cvc}
+              maxLength={3}
+              pattern="[0-9]*"
+              onChange={(e) =>
+                setCvc((v) => (e.target.validity.valid ? e.target.value : v))
+              }
+            />
+          </div>
         </div>
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
         <div>
           <label htmlFor="vendor">Vendor</label>
-          <select id="vendor" onChange={(e) => setVendor(e.target.value)} required >
+          <select
+            id="vendor"
+            onChange={(e) => setVendor(e.target.value)}
+            required
+          >
             <option style={{ display: "none" }}></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking

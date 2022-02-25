@@ -1,228 +1,389 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  .card4 {
-    position: relative;
-    text-align: center;
-    height: 470px;
-  }
-  
-  .card3 {
-    position: relative;
-    text-align: center;
-    height: 470px;
-    display: none;
-  }
-  
-  .card2 {
-    position: relative;
-    text-align: center;
-    height: 470px;
-    display: none;
-  }
-  
-  .card1 {
-    position: relative;
-    text-align: center;
-    height: 470px;
-    display: none;
-  }
-  
-  .cardNumber4 {
-    position: relative;
-    font-size: 2.5em;
-    bottom: 233px;
-    left: 70px;
-    color: white;
-  }
-  
-  .cardHolderName4 {
-    position: relative;
-    font-size: 2em;
-    bottom: 125px;
-    right: 80px;
-    color: white;
-  }
-  
-  .validMonth4 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 135px;
-    left: 176px;
-    color: white;
-  }
-  
-  .validYear4 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 162px;
-    left: 220px;
-    color: white;
-  }
-  
-  .cvc4 {
-    position: relative;
-    bottom: 135px;
-  }
-  
-  .cardNumber3 {
-    position: relative;
-    font-size: 3em;
-    bottom: 165px;
-    color: white;
-  }
-  
-  .cardHolderName3 {
-    position: relative;
-    font-size: 2em;
-    bottom: 125px;
-    right: 150px;
-    color: white;
-  }
-  
-  .validMonth3 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 135px;
-    left: 145px;
-    color: white;
-  }
-  
-  .validYear3 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 162px;
-    left: 190px;
-    color: white;
-  }
-  
-  .cvc3 {
-    position: relative;
-    bottom: 135px;
-  }
-  
-  .cardNumber2 {
-    position: relative;
-    font-size: 3em;
-    bottom: 175px;
-    color: white;
-  }
-  
-  .cardHolderName2 {
-    position: relative;
-    font-size: 2em;
-    bottom: 135px;
-    right: 150px;
-    color: white;
-  }
-  
-  .validMonth2 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 165px;
-    left: 155px;
-    color: white;
-  }
-  
-  .validYear2 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 192px;
-    left: 195px;
-    color: white;
-  }
-  
-  .cvc2 {
-    position: relative;
-    bottom: 135px;
-  }
-  
-  .cardNumber1 {
-    position: relative;
-    font-size: 3em;
-    bottom: 230px;
-    left: 55px;
-    color: white;
-  }
-  
-  .cardHolderName1 {
-    position: relative;
-    font-size: 2em;
-    bottom: 135px;
-    right: 200px;
-    color: white;
-  }
-  
-  .validMonth1 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 175px;
-    left: 200px;
-    color: white;
-  }
-  
-  .validYear1 {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 202px;
-    left: 240px;
-    color: white;
-  }
-  
-  .cvc1 {
-    position: relative;
-    bottom: 135px;
-  }
-  
-  .cardBox {
-    position: relative;
-    text-align: center;
-  }
-  
-  .addcardNumber {
-    position: relative;
-    font-size: 2.5em;
-    bottom: 270px;
-    left: 60px;
-    color: white;
-  }
-  
-  .addcardHolderName {
-    position: relative;
-    font-size: 2em;
-    bottom: 205px;
-    right: 80px;
-    color: white;
-  }
-  
-  .addValidMonth {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 245px;
-    left: 175px;
-    color: white;
-  }
-  
-  .addvalidYear {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 296px;
-    left: 215px;
-    color: white;
-  }
-  
-  .addcvc {
-    position: relative;
-    bottom: 295px;
-  }
-  
-  .addInputs {
-    position: relative;
-  }
-  
+  font-family: sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card4 {
+  position: relative;
+  text-align: center;
+}
+
+.card3 {
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
+.card2 {
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
+.card1 {
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
+.cardNumber4 {
+  position: relative;
+  font-size: 2em;
+  bottom: 168px;
+  left: 52px;
+  color: white;
+}
+
+.cardHolderName4 {
+  position: relative;
+  font-size: 1.5em;
+  bottom: 92px;
+  right: 50px;
+  color: white;
+}
+
+.validMonth4 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 100px;
+  left: 125px;
+  color: white;
+}
+
+.validYear4 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 122px;
+  left: 160px;
+  color: white;
+}
+
+.cvc4 {
+  position: relative;
+  bottom: 105px;
+}
+
+.cardNumber3 {
+  position: relative;
+  font-size: 2.6em;
+  bottom: 130px;
+  color: white;
+}
+
+.cardHolderName3 {
+  position: relative;
+  font-size: 1.3em;
+  bottom: 90px;
+  right: 110px;
+  color: white;
+}
+
+.validMonth3 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 105px;
+  left: 110px;
+  color: white;
+}
+
+.validYear3 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 128px;
+  left: 143px;
+  color: white;
+}
+
+.cvc3 {
+  position: relative;
+  bottom: 115px;
+}
+
+.cardNumber2 {
+  position: relative;
+  font-size: 2.5em;
+  bottom: 135px;
+  color: white;
+}
+
+.cardHolderName2 {
+  position: relative;
+  font-size: 1.3em;
+  bottom: 100px;
+  right: 100px;
+  color: white;
+}
+
+.validMonth2 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 125px;
+  left: 117px;
+  color: white;
+}
+
+.validYear2 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 147px;
+  left: 149px;
+  color: white;
+}
+
+.cvc2 {
+  position: relative;
+  bottom: 115px;
+}
+
+.cardNumber1 {
+  position: relative;
+  font-size: 2.2em;
+  bottom: 164px;
+  left: 40px;
+  color: white;
+}
+
+.cardHolderName1 {
+  position: relative;
+  font-size: 1.3em;
+  bottom: 98px;
+  right: 125px;
+  color: white;
+}
+
+.validMonth1 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 125px;
+  left: 148px;
+  color: white;
+}
+
+.validYear1 {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 148px;
+  left: 180px;
+  color: white;
+}
+
+.cvc1 {
+  position: relative;
+  bottom: 110px;
+}
+
+.credit-card {
+  z-index: 21;
+  top: 80px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.addcardNumber {
+  position: relative;
+  font-size: 2em;
+  bottom: 200px;
+  left: 55px;
+  color: white;
+}
+
+.addcardHolderName {
+  position: relative;
+  font-size: 1.5em;
+  bottom: 156px;
+  right: 50px;
+  color: white;
+}
+
+.addValidMonth {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 190px;
+  left: 130px;
+  color: white;
+}
+
+.addvalidYear {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 231px;
+  left: 162px;
+  color: white;
+}
+
+.addcvc {
+  position: relative;
+  bottom: 230px;
+}
+
+.addInputs {
+  max-width: 580px;
+  margin: auto;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 30px 60px 0 rgb(90 116 148 / 40%);
+  position: relative;
+  border: 1px solid rgb(0, 0, 0, 0.125);
+}
+
+.addnumberImput {
+  display: grid;
+}
+
+.card-label1 {
+  justify-self: left;
+  margin-left: 55px;
+  margin-top: 75px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-input1 {
+  width: 80%;
+  justify-self: center;
+  line-height: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-input1:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.addnameInput {
+  display: grid;
+}
+.card-label2 {
+  justify-self: left;
+  margin-left: 55px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-input2 {
+  width: 80%;
+  justify-self: center;
+  line-height: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-input2:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.addDateAndCvc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expirationDate {
+  display: flex;
+  flex: 1;
+}
+
+.expirationMonth {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expirationYear {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.card-label3 {
+  justify-self: left;
+  margin-left: 25px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-select1 {
+  height: calc(2.875rem + 2px);
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  width: 60%;
+  margin-left: 55px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-select1:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.card-label4 {
+  justify-self: left;
+  margin-left: 25px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-select2 {
+  height: calc(2.875rem + 2px);
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  width: 60%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-select2:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.addCvc {
+  display: grid;
+}
+
+.card-label5 {
+  justify-self: left;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-input5 {
+  width: 65%;
+  margin-right: 40px;
+  justify-self: center;
+  line-height: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-input5:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}

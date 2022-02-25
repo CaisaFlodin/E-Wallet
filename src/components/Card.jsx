@@ -29,15 +29,13 @@ const Card = ({
     <div id="container">
       <ul className="card4" onClick={handleActiveClick}>
         <li>
-          <input value="Remove Card" type="button" onClick={handleRemoveClick}></input>
+          <input
+            value="Remove Card"
+            type="button"
+            onClick={handleRemoveClick}
+          ></input>
         </li>
-        <img
-          className="cardImg"
-          src={cardFour}
-          alt=""
-          height="400px"
-          width="634px"
-        />
+        <img className="cardImg" src={cardFour} alt="" width="450px" />
         <li className="cardNumber4">{cardNumber}</li>
         <li className="cardHolderName4">{cardHolderName}</li>
         <li className="validMonth4">{validMonth}</li>
@@ -46,15 +44,13 @@ const Card = ({
       </ul>
       <ul className="card3" onClick={handleActiveClick}>
         <li>
-          <input value="Remove Card" type="button" onClick={handleRemoveClick}></input>
+          <input
+            value="Remove Card"
+            type="button"
+            onClick={handleRemoveClick}
+          ></input>
         </li>
-        <img
-          className="cardImg"
-          src={cardThree}
-          alt=""
-          height="400px"
-          width="634px"
-        />
+        <img className="cardImg" src={cardThree} alt="" width="450px" />
         <li className="cardNumber3">{cardNumber}</li>
         <li className="cardHolderName3">{cardHolderName}</li>
         <li className="validMonth3">{validMonth}</li>
@@ -63,15 +59,13 @@ const Card = ({
       </ul>
       <ul className="card2" onClick={handleActiveClick}>
         <li>
-          <input value="Remove Card" type="button" onclick={handleRemoveClick}></input>
+          <input
+            value="Remove Card"
+            type="button"
+            onclick={handleRemoveClick}
+          ></input>
         </li>
-        <img
-          className="cardImg"
-          src={cardTwo}
-          alt=""
-          height="400px"
-          width="634px"
-        />
+        <img className="cardImg" src={cardTwo} alt="" width="450px" />
         <li className="cardNumber2">{cardNumber}</li>
         <li className="cardHolderName2">{cardHolderName}</li>
         <li className="validMonth2">{validMonth}</li>
@@ -80,15 +74,13 @@ const Card = ({
       </ul>
       <ul className="card1" onClick={handleActiveClick}>
         <li>
-          <input value="Remove Card" type="button" onclick={handleRemoveClick}></input>
+          <input
+            value="Remove Card"
+            type="button"
+            onclick={handleRemoveClick}
+          ></input>
         </li>
-        <img
-          className="cardImg"
-          src={cardOne}
-          alt=""
-          height="400px"
-          width="634px"
-        />
+        <img className="cardImg" src={cardOne} alt="" width="450px" />
         <li className="cardNumber1">{cardNumber}</li>
         <li className="cardHolderName1">{cardHolderName}</li>
         <li className="validMonth1">{validMonth}</li>
