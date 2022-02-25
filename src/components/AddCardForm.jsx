@@ -8,12 +8,41 @@ const AddCardForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [cardNumber, setCardNumber] = useState();
+  const [cardNumber, setCardNumber] = useState("");
   const [cardHolderName, setCardHolderName] = useState("");
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
+
+  const formatAndSetcardNumber = e => {
+    const inputVal = e.target.value.replace(/ /g, "");
+    let inputNumbersOnly = inputVal.replace(/\D/g, "");
+
+    if (inputNumbersOnly.length > 16) {
+      inputNumbersOnly = inputNumbersOnly.substr(0, 16);
+    }
+
+    const splits = inputNumbersOnly.match(/.{1,4}/g);
+
+    let spacedNumber = "";
+    if (splits) {
+      spacedNumber = splits.join(" ");
+    }
+
+    setCardNumber(spacedNumber);
+  };
+
+
+      
+
+
+
+
+
+
+
+
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +83,8 @@ const AddCardForm = () => {
         <div>
           {/* Box för att skriva numerna manuelt */}
           <label htmlFor="numberInput">Card number</label>
+      <input type="text" value={cardNumber} onChange={formatAndSetcardNumber} />
+          {/* 
           <input
             type="text"
             id="Cardnumber"
@@ -66,7 +97,7 @@ const AddCardForm = () => {
                 e.target.validity.valid ? e.target.value : v
               )
             }
-          />
+          /> */}
         </div>
 
         {/* Box för att skriva in namnet på ägaren av kortet */}
