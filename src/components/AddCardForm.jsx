@@ -79,7 +79,7 @@ const AddCardForm = () => {
         <div>
           {/* Box för att skriva numerna manuelt */}
           <label htmlFor="numberInput">Card number</label>
-      <input type="text" value={cardNumber} onChange={formatAndSetcardNumber} />
+      <input type="text" value={cardNumber} onChange={formatAndSetcardNumber} required />
           {/* 
           <input
             type="text"
@@ -101,6 +101,7 @@ const AddCardForm = () => {
         <div>
           <label htmlFor="cardholdername">Card Holder Name</label>
           <input
+          required 
             type="text"
             id="cardholdername"
             placeholder="Name"
@@ -114,7 +115,7 @@ const AddCardForm = () => {
           <label htmlFor="validMonth">Month</label>
           <select
             id="validMonth"
-            onChange={(e) => setVaildMonth(e.target.value +" /") }
+            onChange={(e) => setVaildMonth(e.target.value +" /") }required 
           >
             <option value="" defaultChecked="true">
               Month
@@ -160,7 +161,7 @@ const AddCardForm = () => {
 
         <div>
           <label htmlFor="validYear">Year</label>
-          <select id="validYear" onChange={(e) => setVaildYear(e.target.value)}>
+          <select id="validYear" onChange={(e) => setVaildYear(e.target.value)} required >
             <option value="" defaultChecked="true">
               Year
             </option>
@@ -190,6 +191,7 @@ const AddCardForm = () => {
         <div>
           <label htmlFor="cvc">Security code</label>
           <input
+          required 
             type="text"
             id="cvc"
             placeholder="ex 123"
@@ -205,7 +207,7 @@ const AddCardForm = () => {
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
         <div>
           <label htmlFor="vendor">Vendor</label>
-          <select id="vendor" onChange={(e) => setVendor(e.target.value)}>
+          <select id="vendor" onChange={(e) => setVendor(e.target.value)} required >
             <option style={{ display: "none" }}></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking
