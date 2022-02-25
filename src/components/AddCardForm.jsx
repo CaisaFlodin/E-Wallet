@@ -2,17 +2,17 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewCard } from "../redux/slices/cardSlice";
 import { useHistory } from "react-router-dom";
+import cardFour from "../images/card4.png";
 
 const AddCardForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [cardNumber, setCardNumber] = useState(0);
-  const [cardFirstName, setCardFirstName] = useState("");
-  const [cardLastName, setCardLastName] = useState("");
-  const [validMonth, setVaildMonth] = useState(0);
-  const [validYear, setVaildYear] = useState(0);
-  const [cvc, setCvc] = useState(0);
+  const [cardNumber, setCardNumber] = useState();
+  const [cardHolderName, setCardHolderName] = useState("");
+  const [validMonth, setVaildMonth] = useState("");
+  const [validYear, setVaildYear] = useState("");
+  const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
 
   const onSubmit = (e) => {
@@ -20,110 +20,166 @@ const AddCardForm = () => {
     dispatch(
       addNewCard({
         cardNumber: cardNumber,
-        cardFirstName: cardFirstName,
-        cardLastName: cardLastName,
+        cardHolderName: cardHolderName,
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor,
+        vendor: vendor
       })
     );
     history.push("/");
   };
   return (
     <form onSubmit={onSubmit}>
-      <div>
-        {/* Kort box där all info skrivs ut */}
-        <h1>Add a new card</h1>
-        <h5>New card</h5>
+      {/* Kort box där all info skrivs ut */}
+      <h1>Add a new card</h1>
+      <h5>New card</h5>
 
-        <div id="cardBox">
-          <p>{cardNumber}</p>
-          <p>{cardFirstName}</p>
-          <p>{cardLastName}</p>
-          <p>{validMonth}</p>
-          <p>{validYear}</p>
-          <p>{cvc}</p>
-          <p>{vendor}</p>
-        </div>
+      <div id="cardBox">
+        <img
+          className="cardImg"
+          src={cardFour}
+          alt=""
+          height="400px"
+          width="634px"
+        />
+        <p className="addcardNumber">{cardNumber}</p>
+        <p className="addcardHolderName">{cardHolderName}</p>
+        <p className="addValidMonth">{validMonth}</p>
+        <p className="addvalidYear">{validYear}</p>
+        <p className="addcvc">{cvc}</p>
+      </div>
 
+      <div className="addInputs">
         <div>
           {/* Box för att skriva numerna manuelt */}
           <label htmlFor="numberInput">Card number</label>
           <input
-          type="text"
-          id="Cardnumber"
-          value={cardNumber}
-          maxLength={16}
-          pattern="[0-9]*"
-          placeholder="Numbers only"
-          onChange={(e) =>  setCardNumber((v) => (e.target.validity.valid ? e.target.value : v)) }
-        />
+            type="text"
+            id="Cardnumber"
+            value={cardNumber}
+            maxLength={16}
+            pattern="[0-9]*"
+            placeholder="Numbers only"
+            onChange={(e) =>
+              setCardNumber((v) =>
+                e.target.validity.valid ? e.target.value : v
+              )
+            }
+          />
         </div>
+
         {/* Box för att skriva in namnet på ägaren av kortet */}
+
         <div>
-          <label htmlFor="firstname">Firstname</label>
+          <label htmlFor="cardholdername">Card Holder Name</label>
           <input
             type="text"
-            id="firstname"
-            placeholder="Firstname"
-            onChange={(e) => setCardFirstName(e.target.value)}
+            id="cardholdername"
+            placeholder="Name"
+            onChange={(e) => setCardHolderName(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="Lastname">Lastname</label>
-          <input
-            type="text"
-            id="Lastname"
-            placeholder="Lastname"
-            onChange={(e) => setCardLastName(e.target.value)}
-          />
-        </div>
+
         {/* box för att skriva in när kortet validitet slutar fungerar */}
+
         <div>
           <label htmlFor="validMonth">Month</label>
-          <input
-          type="text"
-          id="Month"
-          placeholder="1-12"
-          value={validMonth}
-          maxLength={2}
-          pattern="[1-12]*"
-          placeholder="Numbers only"
-          onChange={(e) =>  setVaildMonth((v) => (e.target.validity.valid ? e.target.value : v)) }
-        />
+          <select
+            id="validMonth"
+            onChange={(e) => setVaildMonth(e.target.value)}
+          >
+            <option value="" defaultChecked="true">
+              Month
+            </option>
+            <option id="01" value="01">
+              Jan
+            </option>
+            <option id="02" value="02">
+              Feb
+            </option>
+            <option id="03" value="03">
+              Mar
+            </option>
+            <option id="04" value="04">
+              Apr
+            </option>
+            <option id="05" value="05">
+              May
+            </option>
+            <option id="06" value="06">
+              Jun
+            </option>
+            <option id="07" value="07">
+              Jul
+            </option>
+            <option id="08" value="08">
+              Aug
+            </option>
+            <option id="09" value="09">
+              Sep
+            </option>
+            <option id="10" value="10">
+              Oct
+            </option>
+            <option id="11" value="11">
+              Nov
+            </option>
+            <option id="12" value="12">
+              Dec
+            </option>
+          </select>
         </div>
+
         <div>
           <label htmlFor="validYear">Year</label>
-          <input
-          type="text"
-          id="cvc"
-          placeholder="Numbers only"
-          value={validYear}
-          maxLength={2}
-          pattern="[0-9]*"
-          onChange={(e) =>  setVaildYear((v) => (e.target.validity.valid ? e.target.value : v)) }
-        />
+          <select id="validYear" onChange={(e) => setVaildYear(e.target.value)}>
+            <option value="" defaultChecked="true">
+              Year
+            </option>
+            <option id="01" value="22">
+              2022
+            </option>
+            <option id="02" value="23">
+              2023
+            </option>
+            <option id="03" value="24">
+              2024
+            </option>
+            <option id="04" value="25">
+              2025
+            </option>
+            <option id="05" value="26">
+              2026
+            </option>
+            <option id="06" value="27">
+              2027
+            </option>
+          </select>
         </div>
+
         {/* Box för säkerhets nummerna */}
+
         <div>
-        <label htmlFor="cvc">Security code</label>
-        <input
-          type="text"
-          id="cvc"
-          placeholder="ex 123"
-          value={cvc}
-          maxLength={3}
-          pattern="[0-9]*"
-          placeholder="Numbers only"
-          onChange={(e) =>  setCvc((v) => (e.target.validity.valid ? e.target.value : v)) }
-        />
-      </div>
+          <label htmlFor="cvc">Security code</label>
+          <input
+            type="text"
+            id="cvc"
+            placeholder="ex 123"
+            value={cvc}
+            maxLength={3}
+            pattern="[0-9]*"
+            placeholder="Numbers only"
+            onChange={(e) =>
+              setCvc((v) => (e.target.validity.valid ? e.target.value : v))
+            }
+          />
+        </div>
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
         <div>
           <label htmlFor="vendor">Vendor</label>
           <select id="vendor" onChange={(e) => setVendor(e.target.value)}>
-          <option style = {{display: "none"}}></option>
+            <option style={{ display: "none" }}></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking
             </option>

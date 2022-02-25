@@ -13,17 +13,16 @@ const Cards = () => {
         {cardList.map((card, i) => {
           return (
             <div key={i}>
-            <Card
-              cardNumber={card.cardNumber}
-              cardFirstName={card.cardFirstName}
-              cardLastName={card.cardLastName}
-              validMonth={card.validMonth}
-              validYear={card.validYear}
-              cvc={card.cvc}
-              vendor={card.vendor}
-              id={card.id}
-              isActive={card.isActive}
-            />
+              <Card
+                cardNumber={card.cardNumber}
+                cardHolderName={card.cardHolderName}
+                validMonth={card.validMonth}
+                validYear={card.validYear}
+                cvc={card.cvc}
+                vendor={card.vendor}
+                id={card.id}
+                isActive={card.isActive}
+              />
             </div>
           );
         })}
