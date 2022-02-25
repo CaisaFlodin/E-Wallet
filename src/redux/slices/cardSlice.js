@@ -6,15 +6,15 @@ const cardSlice = createSlice({
   initialState: {
     cardList: [
       {
-        cardHolderName: "Kalle Anka",
         cardNumber: "1234 5678 1234 5678",
+        cardHolderName: "Kalle Anka",
         validMonth: "12",
         validYear: "/ 22",
         cvc: 123,
         id: Date.now(),
-        isActive: true
-      }
-    ]
+        isActive: true,
+      },
+    ],
   },
   //hanterar vår addNewCard action
   reducers: {
@@ -26,15 +26,17 @@ const cardSlice = createSlice({
         validYear: action.payload.validYear,
         cvc: action.payload.cvc,
         vendor: action.payload.vendor,
+        id: Date.now(),
         isActive: false,
-        id: Date.now()
       };
 
       state.cardList = [...state.cardList, newCard];
     },
     removeCard: (state, action) => {
       return {
-        cardList: state.cardList.filter((card) => card.id !== action.payload.id)
+        cardList: state.cardList.filter(
+          (card) => card.id !== action.payload.id
+        ),
       };
     },
     toggleActive: (state, action) => {
@@ -43,8 +45,8 @@ const cardSlice = createSlice({
         (card) => card.id === action.payload.id
       );
       state.cardList[index].isActive = action.payload.isActive;
-    }
-  }
+    },
+  },
 });
 export default cardSlice.reducer;
 export const { addNewCard, toggleActive, removeCard } = cardSlice.actions;
