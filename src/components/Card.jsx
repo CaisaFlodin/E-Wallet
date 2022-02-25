@@ -29,7 +29,7 @@ const Card = ({
     <div id="container">
       <ul className="card4" onClick={handleActiveClick}>
         <li>
-          <input type="checkbox" onChange={handleRemoveClick}></input>
+          <input value="Remove Card" type="button" onClick={handleRemoveClick}></input>
         </li>
         <img
           className="cardImg"
@@ -46,7 +46,7 @@ const Card = ({
       </ul>
       <ul className="card3" onClick={handleActiveClick}>
         <li>
-          <input type="checkbox" onChange={handleRemoveClick}></input>
+          <input value="Remove Card" type="button" onClick={handleRemoveClick}></input>
         </li>
         <img
           className="cardImg"
@@ -63,7 +63,7 @@ const Card = ({
       </ul>
       <ul className="card2" onClick={handleActiveClick}>
         <li>
-          <input type="checkbox" onChange={handleRemoveClick}></input>
+          <input value="Remove Card" type="button" onclick={handleRemoveClick}></input>
         </li>
         <img
           className="cardImg"
@@ -80,7 +80,7 @@ const Card = ({
       </ul>
       <ul className="card1" onClick={handleActiveClick}>
         <li>
-          <input type="checkbox" onChange={handleRemoveClick}></input>
+          <input value="Remove Card" type="button" onclick={handleRemoveClick}></input>
         </li>
         <img
           className="cardImg"
