@@ -13,14 +13,13 @@ const Card = ({
   validYear,
   cvc,
   vendor,
-  isActive
 }) => {
-  console.log(id, cardHolderName, isActive);
+  console.log(id, cardHolderName);
 
   const dispatch = useDispatch();
 
   const handleActiveClick = () => {
-    dispatch(toggleActive({ id: id, isActive: !isActive }));
+    dispatch(toggleActive({ id: id, activeObj: id }));
   };
   const handleRemoveClick = () => {
     dispatch(removeCard({ id: id }));
@@ -28,13 +27,13 @@ const Card = ({
   return (
     <div id="container">
       <ul className="card4" onClick={handleActiveClick}>
-        <li>
+        {/* <li>
           <input
             value="Remove Card"
             type="button"
             onClick={handleRemoveClick}
           ></input>
-        </li>
+        </li> */}
         <img className="cardImg" src={cardFour} alt="" width="450px" />
         <li className="cardNumber4">{cardNumber}</li>
         <li className="cardHolderName4">{cardHolderName}</li>
@@ -43,13 +42,13 @@ const Card = ({
         <li className="cvc4">{cvc}</li>
       </ul>
       <ul className="card3" onClick={handleActiveClick}>
-        <li>
+        {/* <li>
           <input
             value="Remove Card"
             type="button"
             onClick={handleRemoveClick}
           ></input>
-        </li>
+        </li> */}
         <img className="cardImg" src={cardThree} alt="" width="450px" />
         <li className="cardNumber3">{cardNumber}</li>
         <li className="cardHolderName3">{cardHolderName}</li>
@@ -58,13 +57,13 @@ const Card = ({
         <li className="cvc3">{cvc}</li>
       </ul>
       <ul className="card2" onClick={handleActiveClick}>
-        <li>
+        {/* <li>
           <input
             value="Remove Card"
             type="button"
             onclick={handleRemoveClick}
           ></input>
-        </li>
+        </li> */}
         <img className="cardImg" src={cardTwo} alt="" width="450px" />
         <li className="cardNumber2">{cardNumber}</li>
         <li className="cardHolderName2">{cardHolderName}</li>
@@ -73,13 +72,13 @@ const Card = ({
         <li className="cvc2">{cvc}</li>
       </ul>
       <ul className="card1" onClick={handleActiveClick}>
-        <li>
+        {/* <li>
           <input
             value="Remove Card"
             type="button"
             onclick={handleRemoveClick}
           ></input>
-        </li>
+        </li> */}
         <img className="cardImg" src={cardOne} alt="" width="450px" />
         <li className="cardNumber1">{cardNumber}</li>
         <li className="cardHolderName1">{cardHolderName}</li>

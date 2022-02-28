@@ -11,10 +11,11 @@ const cardSlice = createSlice({
         validMonth: "12",
         validYear: "/ 22",
         cvc: 123,
-        id: Date.now(),
+        id: 1,
         isActive: true,
       },
     ],
+    activeObj: 1,
   },
   //hanterar vår addNewCard action
   reducers: {
@@ -39,12 +40,20 @@ const cardSlice = createSlice({
         ),
       };
     },
+    // toggleActive: (state, action) => {
+    //   //The findIndex() method returns an index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.
+    //   const index = state.cardList.findIndex(
+    //     (card) => card.id === action.payload.id
+    //   );
+    //   state.cardList[index].isActive = action.payload.isActive;
+    // },
     toggleActive: (state, action) => {
       //The findIndex() method returns an index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.
       const index = state.cardList.findIndex(
         (card) => card.id === action.payload.id
       );
-      state.cardList[index].isActive = action.payload.isActive;
+
+      state.activeObj = state.cardList[index].id;
     },
   },
 });
