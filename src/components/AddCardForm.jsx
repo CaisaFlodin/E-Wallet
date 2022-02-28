@@ -209,9 +209,12 @@ const AddCardForm = () => {
           </div>
         </div>
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
-        <div>
-          <label htmlFor="vendor">Vendor</label>
+        <div className="addvendor">
+          <label className="card-label6" htmlFor="vendor">
+            Vendor
+          </label>
           <select
+            className="card-select3"
             id="vendor"
             onChange={(e) => setVendor(e.target.value)}
             required
@@ -231,8 +234,10 @@ const AddCardForm = () => {
             </option>
           </select>
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div className="addbutton">
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
         </div>
       </div>
     </form>

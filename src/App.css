@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+body {
+  background-color: #ddeefc;
+}
+
 ul {
   list-style-type: none;
 }
@@ -177,7 +181,10 @@ ul {
 }
 
 .credit-card {
-  z-index: 21;
+  max-width: 500px;
+  max-height: 320px;
+  margin: auto;
+  z-index: 1;
   top: 80px;
   flex-wrap: wrap;
   position: relative;
@@ -225,9 +232,16 @@ ul {
   margin: auto;
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 30px 60px 0 rgb(90 116 148 / 40%);
+  box-shadow: 0 30px 60px 0 rgb(90 116 148 / 100%);
   position: relative;
   border: 1px solid rgb(0, 0, 0, 0.125);
+  background-color: white;
+}
+
+.cardImg {
+  background: linear-gradient(25deg, #999, #999);
+  box-shadow: 0 30px 60px 0 rgb(90 116 148 / 50%);
+  border-radius: 20px;
 }
 
 .addnumberImput {
@@ -386,4 +400,55 @@ ul {
   border-color: #88bdff;
   outline: 0;
   box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.addvendor {
+  display: grid;
+}
+
+.card-label6 {
+  justify-self: left;
+  margin-left: 55px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card-select3 {
+  width: 80%;
+  justify-self: center;
+  height: cal(2.875rem + 2px);
+  font-size: 1.25rem;
+  padding: 0.6rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.card-select3:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bdff;
+  outline: 0;
+  box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
+}
+
+.addbutton {
+  display: grid;
+  justify-self: center;
+}
+
+.submit-button {
+  width: 80%;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  justify-self: center;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border: 1px solid #007bff;
+  box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
