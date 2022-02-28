@@ -452,3 +452,40 @@ ul {
   border: 1px solid #007bff;
   box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
+
+.activeCardNum {
+  position: relative;
+  font-size: 2em;
+  bottom: 196px;
+  left: 50px;
+  color: white;
+}
+
+.activeCardNam {
+  position: relative;
+  font-size: 1.3em;
+  bottom: 170px;
+  right: 75px;
+  color: white;
+}
+
+.activeCardMonth {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 190px;
+  left: 135px;
+  color: white;
+}
+
+.activeCardYear {
+  position: relative;
+  font-size: 1.2em;
+  bottom: 232px;
+  left: 170px;
+  color: white;
+}
+
+.activeCardcvc {
+  position: relative;
+  bottom: 200px;
+}

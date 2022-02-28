@@ -17,59 +17,50 @@ const Cards = () => {
         {activeObj === cardList[0].id ? (
           <div className="card4">
             <img className="cardImg" src={cardFour} alt="" width="450px" />
-            <p className="cardNumber4"> {cardList[0].cardNumber}</p>
-            <p className="cardHolderName4">{cardList[0].cardHolderName}</p>
-            <p className="validMonth4"> {cardList[0].validMonth}</p>
-            <p className="validYear4"> {cardList[0].validYear}</p>
-            <p className="cvc4">{cardList[0].cvc}</p>
-            <p>{cardList[0].vendor}</p>
+            <p className="activeCardNum"> {cardList[0].cardNumber}</p>
+            <p className="activeCardNam">{cardList[0].cardHolderName}</p>
+            <p className="activeCardMonth"> {cardList[0].validMonth}</p>
+            <p className="activeCardYear"> {cardList[0].validYear}</p>
+            <p className="activeCardcvc">{cardList[0].cvc}</p>
+            {/* <p>{cardList[0].vendor}</p> */}
           </div>
         ) : activeObj === cardList[1].id ? (
           <div>
             <img className="cardImg" src={cardThree} alt="" width="450px" />
 
-            <p className="cardNumber3"> {cardList[1].cardNumber}</p>
-            <p className="cardHolderName3">{cardList[1].cardHolderName}</p>
-            <p className="validMonth3"> {cardList[1].validMonth}</p>
-            <p className="validYear3"> {cardList[1].validYear}</p>
-            <p className="cvc3">{cardList[1].cvc}</p>
-            <p> {cardList[1].vendor}</p>
+            <p className="activeCardNum"> {cardList[1].cardNumber}</p>
+            <p className="activeCardNam">{cardList[1].cardHolderName}</p>
+            <p className="activeCardMonth"> {cardList[1].validMonth}</p>
+            <p className="activeCardYear"> {cardList[1].validYear}</p>
+            <p className="activeCardcvc">{cardList[1].cvc}</p>
+            {/* <p> {cardList[1].vendor}</p> */}
           </div>
         ) : activeObj === cardList[2].id ? (
           <div>
             <img className="cardImg" src={cardTwo} alt="" width="450px" />
-            <p className="cardNumber2"> {cardList[2].cardNumber}</p>
-            <p className="cardHolderName2">{cardList[2].cardHolderName}</p>
-            <p className="validMonth2"> {cardList[2].validMonth}</p>
-            <p className="validYear2"> {cardList[2].validYear}</p>
-            <p className="cvc2">{cardList[2].cvc}</p>
-            <p>{cardList[2].vendor}</p>
+            <p className="activeCardNum"> {cardList[2].cardNumber}</p>
+            <p className="activeCardNam">{cardList[2].cardHolderName}</p>
+            <p className="activeCardMonth"> {cardList[2].validMonth}</p>
+            <p className="activeCardYear"> {cardList[2].validYear}</p>
+            <p className="activeCardcvc">{cardList[2].cvc}</p>
+            {/* <p>{cardList[2].vendor}</p> */}
           </div>
         ) : activeObj === cardList[3].id ? (
           <div>
             <img className="cardImg" src={cardOne} alt="" width="450px" />
-            <p className="cardNumber1"> {cardList[3].cardNumber}</p>
-            <p className="cardHolderName1">{cardList[3].cardHolderName}</p>
-            <p className="validMonth1"> {cardList[3].validMonth}</p>
-            <p className="validYear1"> {cardList[3].validYear}</p>
-            <p className="cvc1">{cardList[3].cvc}</p>
-            <p>{cardList[3].vendor}</p>
+            <p className="activeCardNum"> {cardList[3].cardNumber}</p>
+            <p className="activeCardNam">{cardList[3].cardHolderName}</p>
+            <p className="activeCardMonth"> {cardList[3].validMonth}</p>
+            <p className="activeCardYear"> {cardList[3].validYear}</p>
+            <p className="activeCardcvc">{cardList[3].cvc}</p>
+            {/* <p>{cardList[3].vendor}</p> */}
           </div>
         ) : null}
 
         {cardList.map((card, i) => {
           return (
             <div key={i}>
-              <Card
-                cardNumber={card.cardNumber}
-                cardHolderName={card.cardHolderName}
-                validMonth={card.validMonth}
-                validYear={card.validYear}
-                cvc={card.cvc}
-                vendor={card.vendor}
-                id={card.id}
-                isActive={card.isActive}
-              />
+              <Card card={card} activeObj={activeObj} />
             </div>
           );
         })}
