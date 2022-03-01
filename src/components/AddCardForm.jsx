@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewCard } from "../redux/slices/cardSlice";
 import { useHistory } from "react-router-dom";
+import cardFive from "../images/card5.png";
 import cardFour from "../images/card4.png";
 import cardThree from "../images/card3.png";
 import cardTwo from "../images/card2.png";
@@ -41,7 +42,7 @@ const AddCardForm = () => {
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor,
+        vendor: vendor
       })
     );
     history.push("/");
@@ -62,7 +63,9 @@ const AddCardForm = () => {
           <img className="cardImg" src={cardTwo} alt="" width="450px" />
         ) : vendor === "AK Banking" ? (
           <img className="cardImg" src={cardOne} alt="" width="450px" />
-        ) : null}
+        ) : (
+          <img className="cardImg" src={cardFive} alt="" width="450px" />
+        )}
         <p className="addcardNumber">{cardNumber}</p>
         <p className="addcardHolderName">{cardHolderName}</p>
         <p className="addValidMonth">{validMonth}</p>
@@ -232,7 +235,11 @@ const AddCardForm = () => {
             onChange={(e) => setVendor(e.target.value)}
             required
           >
-            <option style={{ display: "none" }}></option>
+            <option
+              id="blank-card"
+              value="blank-bank"
+              style={{ display: "none" }}
+            ></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking
             </option>

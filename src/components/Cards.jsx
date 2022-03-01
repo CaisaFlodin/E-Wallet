@@ -1,6 +1,7 @@
 import Card from "./Card";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import cardFive from "../images/card5.png";
 import cardFour from "../images/card4.png";
 import cardThree from "../images/card3.png";
 import cardTwo from "../images/card2.png";
@@ -16,7 +17,9 @@ const Cards = () => {
         <h2>This card is Active</h2>
         {activeObj === cardList[0].id ? (
           <div className="card4">
-            {cardList[0].vendor === "Hederlig Banking" ? (
+            {cardList[0].vendor === "blank-bank" ? (
+              <img className="cardImg" src={cardFive} alt="" width="450px" />
+            ) : cardList[0].vendor === "Hederlig Banking" ? (
               <img className="cardImg" src={cardFour} alt="" width="450px" />
             ) : cardList[0].vendor === "KANO" ? (
               <img className="cardImg" src={cardThree} alt="" width="450px" />
@@ -26,16 +29,18 @@ const Cards = () => {
               <img className="cardImg" src={cardOne} alt="" width="450px" />
             ) : null}
 
-            <p className="activeCardNum"> {cardList[0].cardNumber}</p>
-            <p className="activeCardNam">{cardList[0].cardHolderName}</p>
-            <p className="activeCardMonth"> {cardList[0].validMonth}</p>
-            <p className="activeCardYear"> {cardList[0].validYear}</p>
-            <p className="activeCardcvc">{cardList[0].cvc}</p>
+            <p className="activeCardNum1"> {cardList[0].cardNumber}</p>
+            <p className="activeCardNam1">{cardList[0].cardHolderName}</p>
+            <p className="activeCardMonth1"> {cardList[0].validMonth}</p>
+            <p className="activeCardYear1"> {cardList[0].validYear}</p>
+            <p className="activeCardcvc1">{cardList[0].cvc}</p>
             {/* <p>{cardList[0].vendor}</p> */}
           </div>
         ) : activeObj === cardList[1].id ? (
-          <div>
-            {cardList[1].vendor === "Hederlig Banking" ? (
+          <div className="card3">
+            {cardList[1].vendor === "blank-bank" ? (
+              <img className="cardImg" src={cardFive} alt="" width="450px" />
+            ) : cardList[1].vendor === "Hederlig Banking" ? (
               <img className="cardImg" src={cardFour} alt="" width="450px" />
             ) : cardList[1].vendor === "KANO" ? (
               <img className="cardImg" src={cardThree} alt="" width="450px" />
@@ -45,16 +50,18 @@ const Cards = () => {
               <img className="cardImg" src={cardOne} alt="" width="450px" />
             ) : null}
 
-            <p className="activeCardNum"> {cardList[1].cardNumber}</p>
-            <p className="activeCardNam">{cardList[1].cardHolderName}</p>
-            <p className="activeCardMonth"> {cardList[1].validMonth}</p>
-            <p className="activeCardYear"> {cardList[1].validYear}</p>
-            <p className="activeCardcvc">{cardList[1].cvc}</p>
+            <p className="activeCardNum2"> {cardList[1].cardNumber}</p>
+            <p className="activeCardNam2">{cardList[1].cardHolderName}</p>
+            <p className="activeCardMonth2"> {cardList[1].validMonth}</p>
+            <p className="activeCardYear2"> {cardList[1].validYear}</p>
+            <p className="activeCardcvc2">{cardList[1].cvc}</p>
             {/* <p> {cardList[1].vendor}</p> */}
           </div>
         ) : activeObj === cardList[2].id ? (
-          <div>
-            {cardList[2].vendor === "Hederlig Banking" ? (
+          <div className="card2">
+            {cardList[2].vendor === "blank-bank" ? (
+              <img className="cardImg" src={cardFive} alt="" width="450px" />
+            ) : cardList[2].vendor === "Hederlig Banking" ? (
               <img className="cardImg" src={cardFour} alt="" width="450px" />
             ) : cardList[2].vendor === "KANO" ? (
               <img className="cardImg" src={cardThree} alt="" width="450px" />
@@ -64,16 +71,18 @@ const Cards = () => {
               <img className="cardImg" src={cardOne} alt="" width="450px" />
             ) : null}
 
-            <p className="activeCardNum"> {cardList[2].cardNumber}</p>
-            <p className="activeCardNam">{cardList[2].cardHolderName}</p>
-            <p className="activeCardMonth"> {cardList[2].validMonth}</p>
-            <p className="activeCardYear"> {cardList[2].validYear}</p>
-            <p className="activeCardcvc">{cardList[2].cvc}</p>
+            <p className="activeCardNum3"> {cardList[2].cardNumber}</p>
+            <p className="activeCardNam3">{cardList[2].cardHolderName}</p>
+            <p className="activeCardMonth3"> {cardList[2].validMonth}</p>
+            <p className="activeCardYear3"> {cardList[2].validYear}</p>
+            <p className="activeCardcvc3">{cardList[2].cvc}</p>
             {/* <p>{cardList[2].vendor}</p> */}
           </div>
         ) : activeObj === cardList[3].id ? (
-          <div>
-            {cardList[3].vendor === "Hederlig Banking" ? (
+          <div className="card1">
+            {cardList[3].vendor === "blank-bank" ? (
+              <img className="cardImg" src={cardFive} alt="" width="450px" />
+            ) : cardList[3].vendor === "Hederlig Banking" ? (
               <img className="cardImg" src={cardFour} alt="" width="450px" />
             ) : cardList[3].vendor === "KANO" ? (
               <img className="cardImg" src={cardThree} alt="" width="450px" />
@@ -83,11 +92,11 @@ const Cards = () => {
               <img className="cardImg" src={cardOne} alt="" width="450px" />
             ) : null}
 
-            <p className="activeCardNum"> {cardList[3].cardNumber}</p>
-            <p className="activeCardNam">{cardList[3].cardHolderName}</p>
-            <p className="activeCardMonth"> {cardList[3].validMonth}</p>
-            <p className="activeCardYear"> {cardList[3].validYear}</p>
-            <p className="activeCardcvc">{cardList[3].cvc}</p>
+            <p className="activeCardNum4"> {cardList[3].cardNumber}</p>
+            <p className="activeCardNam4">{cardList[3].cardHolderName}</p>
+            <p className="activeCardMonth4"> {cardList[3].validMonth}</p>
+            <p className="activeCardYear4"> {cardList[3].validYear}</p>
+            <p className="activeCardcvc4">{cardList[3].cvc}</p>
             {/* <p>{cardList[3].vendor}</p> */}
           </div>
         ) : null}
@@ -100,8 +109,8 @@ const Cards = () => {
           );
         })}
         {cardList.length <= 3 ? (
-          <Link to={"/add/"}>
-            <button>Add a new card</button>
+          <Link to={"/add/"} className="button_1">
+            <button className="btn_1">Add a new card</button>
           </Link>
         ) : (
           <p>
