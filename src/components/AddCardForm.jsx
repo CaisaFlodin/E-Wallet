@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { addNewCard } from "../redux/slices/cardSlice";
 import { useHistory } from "react-router-dom";
 import cardFour from "../images/card4.png";
+import cardThree from "../images/card3.png";
+import cardTwo from "../images/card2.png";
+import cardOne from "../images/card1.png";
 
 const AddCardForm = () => {
   const dispatch = useDispatch();
@@ -38,19 +41,28 @@ const AddCardForm = () => {
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor
+        vendor: vendor,
       })
     );
     history.push("/");
+    console.log(vendor);
   };
   return (
     <form onSubmit={onSubmit}>
       {/* Kort box där all info skrivs ut */}
       <h1>Add a new card</h1>
       <h5>New card</h5>
-
+      {/* const select =  */}
       <div className="credit-card" id="cardBox">
-        <img className="cardImg" src={cardFour} alt="" width="450px" />
+        {vendor === "Hederlig Banking" ? (
+          <img className="cardImg" src={cardFour} alt="" width="450px" />
+        ) : vendor === "KANO" ? (
+          <img className="cardImg" src={cardThree} alt="" width="450px" />
+        ) : vendor === "FlodInvest" ? (
+          <img className="cardImg" src={cardTwo} alt="" width="450px" />
+        ) : vendor === "AK Banking" ? (
+          <img className="cardImg" src={cardOne} alt="" width="450px" />
+        ) : null}
         <p className="addcardNumber">{cardNumber}</p>
         <p className="addcardHolderName">{cardHolderName}</p>
         <p className="addValidMonth">{validMonth}</p>
@@ -215,6 +227,7 @@ const AddCardForm = () => {
           </label>
           <select
             className="card-select3"
+            value={vendor}
             id="vendor"
             onChange={(e) => setVendor(e.target.value)}
             required

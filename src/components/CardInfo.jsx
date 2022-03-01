@@ -1,9 +1,9 @@
 import { toggleActive } from "../redux/slices/cardSlice";
 import { useDispatch } from "react-redux";
 import cardFour from "../images/card4.png";
-// import cardThree from "../images/card3.png";
-// import cardTwo from "../images/card2.png";
-// import cardOne from "../images/card1.png";
+import cardThree from "../images/card3.png";
+import cardTwo from "../images/card2.png";
+import cardOne from "../images/card1.png";
 const CardInfo = ({
   id,
   cardNumber,
@@ -29,7 +29,16 @@ const CardInfo = ({
           ></input>
         </li> */}
       <ul className="card4" onClick={handleActiveClick}>
-        <img className="cardImg" src={cardFour} alt="" width="450px" />
+        {vendor === "Hederlig Banking" ? (
+          <img className="cardImg" src={cardFour} alt="" width="450px" />
+        ) : vendor === "KANO" ? (
+          <img className="cardImg" src={cardThree} alt="" width="450px" />
+        ) : vendor === "FlodInvest" ? (
+          <img className="cardImg" src={cardTwo} alt="" width="450px" />
+        ) : vendor === "AK Banking" ? (
+          <img className="cardImg" src={cardOne} alt="" width="450px" />
+        ) : null}
+
         <li className="cardNumber4">{cardNumber}</li>
         <li className="cardHolderName4">{cardHolderName}</li>
         <li className="validMonth4">{validMonth}</li>
