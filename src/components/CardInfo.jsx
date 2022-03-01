@@ -45,6 +45,7 @@ const CardInfo = ({
         <li className="validYear4">{validYear}</li>
         <li className="cvc4">{cvc}</li>
       </ul>
+
       {/* <ul className="card3" onClick={handleActiveClick}> */}
       {/* <li>
           <input
@@ -60,7 +61,6 @@ const CardInfo = ({
         <li className="validYear3">{validYear}</li>
         <li className="cvc3">{cvc}</li>
       </ul> */}
-
       {/* <li>
     //       <input
     //         value="Remove Card"

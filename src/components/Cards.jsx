@@ -16,7 +16,16 @@ const Cards = () => {
         <h2>This card is Active</h2>
         {activeObj === cardList[0].id ? (
           <div className="card4">
-            <img className="cardImg" src={cardFour} alt="" width="450px" />
+            {cardList[0].vendor === "Hederlig Banking" ? (
+              <img className="cardImg" src={cardFour} alt="" width="450px" />
+            ) : cardList[0].vendor === "KANO" ? (
+              <img className="cardImg" src={cardThree} alt="" width="450px" />
+            ) : cardList[0].vendor === "FlodInvest" ? (
+              <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            ) : cardList[0].vendor === "AK Banking" ? (
+              <img className="cardImg" src={cardOne} alt="" width="450px" />
+            ) : null}
+
             <p className="activeCardNum"> {cardList[0].cardNumber}</p>
             <p className="activeCardNam">{cardList[0].cardHolderName}</p>
             <p className="activeCardMonth"> {cardList[0].validMonth}</p>
@@ -26,7 +35,15 @@ const Cards = () => {
           </div>
         ) : activeObj === cardList[1].id ? (
           <div>
-            <img className="cardImg" src={cardThree} alt="" width="450px" />
+            {cardList[1].vendor === "Hederlig Banking" ? (
+              <img className="cardImg" src={cardFour} alt="" width="450px" />
+            ) : cardList[1].vendor === "KANO" ? (
+              <img className="cardImg" src={cardThree} alt="" width="450px" />
+            ) : cardList[1].vendor === "FlodInvest" ? (
+              <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            ) : cardList[1].vendor === "AK Banking" ? (
+              <img className="cardImg" src={cardOne} alt="" width="450px" />
+            ) : null}
 
             <p className="activeCardNum"> {cardList[1].cardNumber}</p>
             <p className="activeCardNam">{cardList[1].cardHolderName}</p>
@@ -37,7 +54,16 @@ const Cards = () => {
           </div>
         ) : activeObj === cardList[2].id ? (
           <div>
-            <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            {cardList[2].vendor === "Hederlig Banking" ? (
+              <img className="cardImg" src={cardFour} alt="" width="450px" />
+            ) : cardList[2].vendor === "KANO" ? (
+              <img className="cardImg" src={cardThree} alt="" width="450px" />
+            ) : cardList[2].vendor === "FlodInvest" ? (
+              <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            ) : cardList[2].vendor === "AK Banking" ? (
+              <img className="cardImg" src={cardOne} alt="" width="450px" />
+            ) : null}
+
             <p className="activeCardNum"> {cardList[2].cardNumber}</p>
             <p className="activeCardNam">{cardList[2].cardHolderName}</p>
             <p className="activeCardMonth"> {cardList[2].validMonth}</p>
@@ -47,7 +73,16 @@ const Cards = () => {
           </div>
         ) : activeObj === cardList[3].id ? (
           <div>
-            <img className="cardImg" src={cardOne} alt="" width="450px" />
+            {cardList[3].vendor === "Hederlig Banking" ? (
+              <img className="cardImg" src={cardFour} alt="" width="450px" />
+            ) : cardList[3].vendor === "KANO" ? (
+              <img className="cardImg" src={cardThree} alt="" width="450px" />
+            ) : cardList[3].vendor === "FlodInvest" ? (
+              <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            ) : cardList[3].vendor === "AK Banking" ? (
+              <img className="cardImg" src={cardOne} alt="" width="450px" />
+            ) : null}
+
             <p className="activeCardNum"> {cardList[3].cardNumber}</p>
             <p className="activeCardNam">{cardList[3].cardHolderName}</p>
             <p className="activeCardMonth"> {cardList[3].validMonth}</p>

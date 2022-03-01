@@ -13,6 +13,7 @@ const cardSlice = createSlice({
         cvc: 123,
         id: 1,
         isActive: true,
+        vendor: "Hederlig Banking",
       },
     ],
     activeObj: 1,
