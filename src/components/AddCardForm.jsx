@@ -7,6 +7,11 @@ import cardFour from "../images/card4.png";
 import cardThree from "../images/card3.png";
 import cardTwo from "../images/card2.png";
 import cardOne from "../images/card1.png";
+import cardBackOne from "../images/card1back.png";
+import cardBackTwo from "../images/card2back.png";
+import cardBackThree from "../images/card3back.png";
+import cardBackFour from "../images/card4back.png";
+import cardBackFive from "../images/card5back.png";
 
 const AddCardForm = () => {
   const dispatch = useDispatch();
@@ -54,23 +59,67 @@ const AddCardForm = () => {
       <h1>Add a new card</h1>
       <h5>New card</h5>
       {/* const select =  */}
-      <div className="credit-card" id="cardBox">
-        {vendor === "Hederlig Banking" ? (
-          <img className="cardImg" src={cardFour} alt="" width="450px" />
-        ) : vendor === "KANO" ? (
-          <img className="cardImg" src={cardThree} alt="" width="450px" />
-        ) : vendor === "FlodInvest" ? (
-          <img className="cardImg" src={cardTwo} alt="" width="450px" />
-        ) : vendor === "AK Banking" ? (
-          <img className="cardImg" src={cardOne} alt="" width="450px" />
-        ) : (
-          <img className="cardImg" src={cardFive} alt="" width="450px" />
-        )}
-        <p className="addcardNumber">{cardNumber}</p>
-        <p className="addcardHolderName">{cardHolderName}</p>
-        <p className="addValidMonth">{validMonth}</p>
-        <p className="addvalidYear">{validYear}</p>
-        <p className="addcvc">{cvc}</p>
+      <div className="container-card" id="cardBox">
+        <div className="card-container">
+          <div className="card">
+            <section className="front">
+              {vendor === "Hederlig Banking" ? (
+                <img className="cardImg" src={cardFour} alt="" width="450px" />
+              ) : vendor === "KANO" ? (
+                <img className="cardImg" src={cardThree} alt="" width="450px" />
+              ) : vendor === "FlodInvest" ? (
+                <img className="cardImg" src={cardTwo} alt="" width="450px" />
+              ) : vendor === "AK Banking" ? (
+                <img className="cardImg" src={cardOne} alt="" width="450px" />
+              ) : (
+                <img className="cardImg" src={cardFive} alt="" width="450px" />
+              )}
+              <p className="addcardNumber">{cardNumber}</p>
+              <p className="addcardHolderName">{cardHolderName}</p>
+              <p className="addValidMonth">{validMonth}</p>
+              <p className="addvalidYear">{validYear}</p>
+            </section>
+            <section className="back">
+              {vendor === "Hederlig Banking" ? (
+                <img
+                  className="cardImg"
+                  src={cardBackFour}
+                  alt=""
+                  width="450px"
+                />
+              ) : vendor === "KANO" ? (
+                <img
+                  className="cardImg"
+                  src={cardBackThree}
+                  alt=""
+                  width="450px"
+                />
+              ) : vendor === "FlodInvest" ? (
+                <img
+                  className="cardImg"
+                  src={cardBackTwo}
+                  alt=""
+                  width="450px"
+                />
+              ) : vendor === "AK Banking" ? (
+                <img
+                  className="cardImg"
+                  src={cardBackOne}
+                  alt=""
+                  width="450px"
+                />
+              ) : (
+                <img
+                  className="cardImg"
+                  src={cardBackFive}
+                  alt=""
+                  width="450px"
+                />
+              )}
+              <p className="addcvc">{cvc}</p>
+            </section>
+          </div>
+        </div>
       </div>
 
       <div className="addInputs">
