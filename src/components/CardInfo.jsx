@@ -43,7 +43,12 @@ const CardInfo = ({
         <div>
           <button onClick={handleRemoveClick}>Remove Card</button>
           <li className="cardNumber4">{cardNumber}</li>
-          <li className="cardHolderName4">{cardHolderName}</li>
+          <li
+            className="cardHolderName4"
+            style={{ textTransform: "uppercase" }}
+          >
+            {cardHolderName}
+          </li>
           <li className="validMonth4">{validMonth}</li>
           <li className="validYear4">{validYear}</li>
           <li className="cvc4">{cvc}</li>
