@@ -160,7 +160,9 @@ const AddCardForm = () => {
             required
             type="text"
             id="cardholdername"
+            style={{ textTransform: "uppercase" }}
             disabled
+            
             value={cardHolderName}
             placeholder={cardHolderName}
           />
