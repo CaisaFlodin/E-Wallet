@@ -1,4 +1,4 @@
-import { toggleActive } from "../redux/slices/cardSlice";
+import { toggleActive, removeCard } from "../redux/slices/cardSlice";
 import { useDispatch } from "react-redux";
 import cardFive from "../images/card5.png";
 import cardFour from "../images/card4.png";
@@ -12,34 +12,42 @@ const CardInfo = ({
   validMonth,
   validYear,
   cvc,
-  vendor
+  vendor,
 }) => {
   const dispatch = useDispatch();
   const handleActiveClick = () => {
     dispatch(toggleActive({ id: id, activeObj: id }));
     console.log(id);
   };
-  console.log(cardNumber);
+  const handleRemoveClick = () => {
+    dispatch(removeCard({ id: id }));
+  };
+
   return (
     <div className="container" id="container">
-      <ul className="card4" onClick={handleActiveClick}>
-        {vendor === "Hederlig Banking" ? (
-          <img className="cardImg" src={cardFour} alt="" width="450px" />
-        ) : vendor === "KANO" ? (
-          <img className="cardImg" src={cardThree} alt="" width="450px" />
-        ) : vendor === "FlodInvest" ? (
-          <img className="cardImg" src={cardTwo} alt="" width="450px" />
-        ) : vendor === "AK Banking" ? (
-          <img className="cardImg" src={cardOne} alt="" width="450px" />
-        ) : vendor === "blank-bank" ? (
-          <img className="cardImg" src={cardFive} alt="" width="450px" />
-        ) : null}
+      <ul className="card4">
+        <div onClick={handleActiveClick}>
+          {vendor === "Hederlig Banking" ? (
+            <img className="cardImg" src={cardFour} alt="" width="450px" />
+          ) : vendor === "KANO" ? (
+            <img className="cardImg" src={cardThree} alt="" width="450px" />
+          ) : vendor === "FlodInvest" ? (
+            <img className="cardImg" src={cardTwo} alt="" width="450px" />
+          ) : vendor === "AK Banking" ? (
+            <img className="cardImg" src={cardOne} alt="" width="450px" />
+          ) : vendor === "blank-bank" ? (
+            <img className="cardImg" src={cardFive} alt="" width="450px" />
+          ) : null}
+        </div>
 
-        <li className="cardNumber4">{cardNumber}</li>
-        <li className="cardHolderName4">{cardHolderName}</li>
-        <li className="validMonth4">{validMonth}</li>
-        <li className="validYear4">{validYear}</li>
-        <li className="cvc4">{cvc}</li>
+        <div>
+          <button onClick={handleRemoveClick}>Remove Card</button>
+          <li className="cardNumber4">{cardNumber}</li>
+          <li className="cardHolderName4">{cardHolderName}</li>
+          <li className="validMonth4">{validMonth}</li>
+          <li className="validYear4">{validYear}</li>
+          <li className="cvc4">{cvc}</li>
+        </div>
       </ul>
     </div>
   );

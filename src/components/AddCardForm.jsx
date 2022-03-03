@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addNewCard } from "../redux/slices/cardSlice";
 import { useHistory } from "react-router-dom";
 import cardFive from "../images/card5.png";
@@ -14,20 +14,25 @@ import cardBackFour from "../images/card4back.png";
 import cardBackFive from "../images/card5back.png";
 
 const AddCardForm = () => {
+  const { api } = useSelector((state) => state.cards);
   const dispatch = useDispatch();
   const history = useHistory();
-
+  useEffect(() => {
+    console.log(api);
+  });
   const [cardNumber, setCardNumber] = useState("");
-  const [cardHolderName, setCardHolderName] = useState("");
+  // const [cardHolderName, setCardHolderName] = useState("");
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
-
+  const fName = api.results[0].name.first;
+  const lName = api.results[0].name.last;
+  const cardHolderName = fName + " " + lName;
   const formatAndSetcardNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, "");
     let inputNumbersOnly = inputVal.replace(/\D/g, "");
-    if (inputNumbersOnly.length > 16) {
+    if (inputNumbersOnly.length === 16) {
       inputNumbersOnly = inputNumbersOnly.substr(0, 16);
     }
     const splits = inputNumbersOnly.match(/.{1,4}/g);
@@ -47,7 +52,7 @@ const AddCardForm = () => {
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor
+        vendor: vendor,
       })
     );
     history.push("/");
@@ -133,6 +138,8 @@ const AddCardForm = () => {
             type="text"
             value={cardNumber}
             onChange={formatAndSetcardNumber}
+            maxLength={19}
+            minLength={19}
             required
           />
           {/* 
@@ -162,7 +169,10 @@ const AddCardForm = () => {
             required
             type="text"
             id="cardholdername"
-            onChange={(e) => setCardHolderName(e.target.value)}
+            value={cardHolderName}
+            // style="uppercase"
+            placeholder={cardHolderName}
+            // onChange={(e) => settName(e.target.value)}
           />
         </div>
 

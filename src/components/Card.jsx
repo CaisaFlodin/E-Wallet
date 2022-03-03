@@ -1,6 +1,6 @@
 import CardInfo from "./CardInfo";
 const Card = (props) => {
-  console.log(props.card);
+  console.log(props.card.cardHolderName);
   console.log(props.activeObj);
 
   return (
@@ -15,6 +15,7 @@ const Card = (props) => {
           vendor={props.card.vendor}
           id={props.card.id}
           isActive={props.card.isActive}
+          id2={props.card.id2}
         />
       ) : null}
     </>
