@@ -102,7 +102,8 @@ const cardSlice = createSlice({
       state.activeObj = state.cardList[index].id;
     },
     removeCard: (state, action) => {
-      return state.cardList.filter((card) => card.id !== action.payload.id);
+      const { id } = action.payload;
+      state.cardList = state.cardList.filter((card) => card.id !== id);
     },
   },
   extraReducers: {

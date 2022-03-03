@@ -26,9 +26,9 @@ const AddCardForm = () => {
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
-  const fName = api.results[0].name.first;
-  const lName = api.results[0].name.last;
-  const cardHolderName = fName + " " + lName;
+  // const fName = api.results[0].name.first;
+  // const lName = api.results[0].name.last;
+  // const cardHolderName = fName + " " + lName;
   const formatAndSetcardNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, "");
     let inputNumbersOnly = inputVal.replace(/\D/g, "");
@@ -47,8 +47,8 @@ const AddCardForm = () => {
     e.preventDefault();
     dispatch(
       addNewCard({
-        cardNumber: cardNumber,
-        cardHolderName: cardHolderName,
+        // cardNumber: cardNumber,
+        // cardHolderName: cardHolderName,
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
@@ -80,7 +80,7 @@ const AddCardForm = () => {
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               )}
               <p className="addcardNumber">{cardNumber}</p>
-              <p className="addcardHolderName">{cardHolderName}</p>
+              {/* <p className="addcardHolderName">{cardHolderName}</p> */}
               <p className="addValidMonth">{validMonth}</p>
               <p className="addvalidYear">{validYear}</p>
             </section>
@@ -169,9 +169,9 @@ const AddCardForm = () => {
             required
             type="text"
             id="cardholdername"
-            value={cardHolderName}
+            // value={cardHolderName}
             // style="uppercase"
-            placeholder={cardHolderName}
+            // placeholder={cardHolderName}
             // onChange={(e) => settName(e.target.value)}
           />
         </div>
