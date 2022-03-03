@@ -55,7 +55,7 @@ const AddCardForm = () => {
         vendor: vendor,
       })
     );
-    history.push("/");
+    history.push("/wallet");
     console.log(vendor);
   };
   return (

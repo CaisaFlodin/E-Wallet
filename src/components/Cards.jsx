@@ -108,7 +108,7 @@ const Cards = () => {
           );
         })}
         {cardList.length <= 3 ? (
-          <Link to={"/add/"} className="button_1">
+          <Link to={"/addCard"} className="button_1">
             <button
               onClick={() => {
                 dispatch(getInfo());
@@ -118,10 +118,7 @@ const Cards = () => {
             </button>
           </Link>
         ) : (
-          <p>
-            Your wallet have the maximum amount of 4 cards. Remove cards to add
-            a new one.
-          </p>
+          <p>Your wallet have the maximum amount of four cards.</p>
         )}
       </div>
     </>
