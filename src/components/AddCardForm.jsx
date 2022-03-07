@@ -276,15 +276,16 @@ const AddCardForm = () => {
           </label>
           <select
             className="card-select3"
-            value={vendor}
-            id="vendor"
-            onChange={(e) => setVendor(e.target.value)}
+            value={vendor}  
             required
+            onChange={(e) => setVendor(e.target.value)}
+            
+
           >
             <option
               id="blank-card"
-              value="blank-bank"
-              style={{ display: "none" }}
+              disabled selected
+              
             ></option>
             <option id="oscar" value="Hederlig Banking">
               Hederlig Banking
