@@ -22,7 +22,7 @@ const AddCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
-  const [cvc, setCvc] = useState();
+  const [cvc, setCvc] = useState('');
   const [vendor, setVendor] = useState("");
 
   const formatAndSetCardNumber = (e) => {
@@ -258,7 +258,7 @@ const AddCardForm = () => {
             </label>
             <input
               className="card-input5"
-              type="text"
+              type="tel"
               id="cvc"
               value={cvc}
               maxLength={3}
