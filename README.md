@@ -1,9 +1,11 @@
 Project E-Wallet
 Made by:
-Andrée Köhler
-Caisa Flodin
-Asami Jönsson
+Andrée Köhler, 
+Caisa Flodin, 
+Asami Jönsson, 
 Oscar Hederlig
+
+
 
 Text follow in Swedish
 
