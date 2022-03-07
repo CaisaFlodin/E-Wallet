@@ -1,6 +1,6 @@
 Project E-Wallet
 Made by:
-Andreé Köhlner
+Andrée Köhler
 Caisa Flodin
 Asami Jönsson
 Oscar Hederlig
