@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const getInfo = createAsyncThunk("cardList", async () => {
   let response = await fetch("https://randomuser.me/api/");
   let json = await response.json();
-  console.log(json);
+
   return json;
   //det som returneras här, kommer att bli vår action.payload
 });

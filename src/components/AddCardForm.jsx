@@ -53,7 +53,6 @@ const AddCardForm = () => {
       })
     );
     history.push("/wallet");
-    console.log(vendor);
   };
   return (
     <form onSubmit={onSubmit}>

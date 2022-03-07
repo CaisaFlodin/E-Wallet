@@ -19,7 +19,7 @@ const CardInfo = ({
   const dispatch = useDispatch();
   const handleActiveClick = () => {
     dispatch(toggleActive({ id: id, activeObj: id }));
-    console.log(id);
+
   };
   const handleRemoveClick = () => {
     dispatch(removeCard({ id: id }));
