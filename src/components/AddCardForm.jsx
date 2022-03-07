@@ -122,7 +122,7 @@ const AddCardForm = () => {
                   width="450px"
                 />
               )}
-              <p className="addCvc">{cvc}</p>
+              <p className="addcvc">{cvc}</p>
             </section>
           </div>
         </div>
