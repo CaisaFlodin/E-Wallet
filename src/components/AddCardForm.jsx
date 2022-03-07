@@ -279,12 +279,11 @@ const AddCardForm = () => {
             value={vendor}  
             required
             onChange={(e) => setVendor(e.target.value)}
-            
-
-          >
+             >
             <option
               id="blank-card"
-              disabled selected
+              disabled 
+              
               
             ></option>
             <option id="oscar" value="Hederlig Banking">
