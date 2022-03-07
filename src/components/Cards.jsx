@@ -16,10 +16,10 @@ const Cards = () => {
   return (
     <>
       <div>
-        <h2 className="Active-Card-H2">Active Card</h2>
+        <h2 className="active-card-h2">Active Card</h2>
         <div>
           {activeObj === cardList[0].id ? (
-            <div className="activecard4">
+            <div className="activeCard4">
               {cardList[0].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[0].vendor === "Hederlig Banking" ? (
@@ -41,10 +41,10 @@ const Cards = () => {
               </p>
               <p className="activeCardMonth1"> {cardList[0].validMonth}</p>
               <p className="activeCardYear1"> {cardList[0].validYear}</p>
-              <p className="activeCardcvc1">{cardList[0].cvc}</p>
+              <p className="activeCardCvc1">{cardList[0].cvc}</p>
             </div>
           ) : activeObj === cardList[1].id ? (
-            <div className="activecard3">
+            <div className="activeCard3">
               {cardList[1].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[1].vendor === "Hederlig Banking" ? (
@@ -66,10 +66,10 @@ const Cards = () => {
               </p>
               <p className="activeCardMonth2"> {cardList[1].validMonth}</p>
               <p className="activeCardYear2"> {cardList[1].validYear}</p>
-              <p className="activeCardcvc2">{cardList[1].cvc}</p>
+              <p className="activeCardCvc2">{cardList[1].cvc}</p>
             </div>
           ) : activeObj === cardList[2].id ? (
-            <div className="activecard2">
+            <div className="activeCard2">
               {cardList[2].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[2].vendor === "Hederlig Banking" ? (
@@ -91,10 +91,10 @@ const Cards = () => {
               </p>
               <p className="activeCardMonth3"> {cardList[2].validMonth}</p>
               <p className="activeCardYear3"> {cardList[2].validYear}</p>
-              <p className="activeCardcvc3">{cardList[2].cvc}</p>
+              <p className="activeCardCvc3">{cardList[2].cvc}</p>
             </div>
           ) : activeObj === cardList[3].id ? (
-            <div className="activecard1">
+            <div className="activeCard1">
               {cardList[3].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[3].vendor === "Hederlig Banking" ? (
@@ -116,15 +116,15 @@ const Cards = () => {
               </p>
               <p className="activeCardMonth4"> {cardList[3].validMonth}</p>
               <p className="activeCardYear4"> {cardList[3].validYear}</p>
-              <p className="activeCardcvc4">{cardList[3].cvc}</p>
+              <p className="activeCardCvc4">{cardList[3].cvc}</p>
             </div>
           ) : null}
         </div>
-        <h2 className="Inactive-Card-H2">Inactive Cards</h2>
+        <h2 className="inactive-card-h2">Inactive Cards</h2>
         {cardList.length <= 3 ? (
           <Link to={"/addCard"}>
             <button
-              className="Add-Card-Button"
+              className="add-card-button"
               onClick={() => {
                 dispatch(getName());
               }}
@@ -133,7 +133,7 @@ const Cards = () => {
             </button>
           </Link>
         ) : (
-          <p className="Wallet-Full-P">
+          <p className="wallet-full-p">
             Your wallet have the maximum amount of four cards.
           </p>
         )}

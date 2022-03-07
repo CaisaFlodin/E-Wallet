@@ -4,9 +4,8 @@ export const getName = createAsyncThunk("getName", async () => {
   let json = await response.json();
   console.log(json);
   return json;
-  //det som returneras här, kommer att bli vår action.payload
 });
-//kontrollerar och uppdaterar cards state
+
 const nameSlice = createSlice({
   name: "api",
   initialState: {
@@ -14,20 +13,16 @@ const nameSlice = createSlice({
 
     status2: null,
   },
-
-  //hanterar vår addNewCard action
-
   extraReducers: {
-    [getName.fulfilled]: (state, action) => {
-      state.cardList2 = action.payload;
+    [getName.fulfilled]: (state, { payload }) => {
+      state.cardList2 = payload;
       state.status2 = null;
     },
-
     [getName.pending]: (state) => {
-      state.status2 = "Fetching todos. Please wait a moment...";
+      state.status2 = "Fetching users. Please wait a moment...";
     },
     [getName.rejected]: (state) => {
-      state.status2 = "Failed to fetch todos.";
+      state.status2 = "Failed to fetch users.";
     },
   },
 });

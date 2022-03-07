@@ -31,15 +31,15 @@ const cardSlice = createSlice({
 
   //hanterar vår addNewCard action
   reducers: {
-    addNewCard: (state, action) => {
+    addNewCard: (state, { payload }) => {
       const newCard = {
-        cardNumber: action.payload.cardNumber,
-        cardHolderFirst: action.payload.cardHolderFirst,
-        cardHolderLast: action.payload.cardHolderLast,
-        validMonth: action.payload.validMonth,
-        validYear: action.payload.validYear,
-        cvc: action.payload.cvc,
-        vendor: action.payload.vendor,
+        cardNumber: payload.cardNumber,
+        cardHolderFirst: payload.cardHolderFirst,
+        cardHolderLast: payload.cardHolderLast,
+        validMonth: payload.validMonth,
+        validYear: payload.validYear,
+        cvc: payload.cvc,
+        vendor: payload.vendor,
         id: Date.now(),
         isActive: false,
       };
@@ -47,30 +47,27 @@ const cardSlice = createSlice({
       state.cardList = [...state.cardList, newCard];
     },
 
-    toggleActive: (state, action) => {
-      //The findIndex() method returns an index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.
-      const index = state.cardList.findIndex(
-        (card) => card.id === action.payload.id
-      );
+    toggleActive: (state, { payload }) => {
+      const index = state.cardList.findIndex((card) => card.id === payload.id);
 
       state.activeObj = state.cardList[index].id;
     },
-    removeCard: (state, action) => {
-      const { id } = action.payload;
+    removeCard: (state, { payload }) => {
+      const { id } = payload;
       state.cardList = state.cardList.filter((card) => card.id !== id);
     },
   },
   extraReducers: {
-    [getInfo.fulfilled]: (state, action) => {
-      state.cardList[0].cardHolderFirst = action.payload.results[0].name.first;
-      state.cardList[0].cardHolderLast = action.payload.results[0].name.last;
+    [getInfo.fulfilled]: (state, { payload }) => {
+      state.cardList[0].cardHolderFirst = payload.results[0].name.first;
+      state.cardList[0].cardHolderLast = payload.results[0].name.last;
       state.status = null;
     },
     [getInfo.pending]: (state) => {
-      state.status = "Fetching todos. Please wait a moment...";
+      state.status = "Fetching users. Please wait a moment...";
     },
     [getInfo.rejected]: (state) => {
-      state.status = "Failed to fetch todos.";
+      state.status = "Failed to fetch users.";
     },
   },
 });

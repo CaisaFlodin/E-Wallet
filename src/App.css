@@ -96,7 +96,7 @@ ul {
   backface-visibility: hidden;
 }
 
-.addcardNumber {
+.addCardNumber {
   position: absolute;
   text-align: inherit;
   font-size: 2.3em;
@@ -110,7 +110,7 @@ ul {
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.4);
 }
 
-.addcardHolderName {
+.addCardHolderName {
   position: absolute;
   font-size: 1.2em;
   top: 218px;
@@ -136,7 +136,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.addvalidYear {
+.addValidYear {
   position: absolute;
   font-size: 1.2em;
   top: 218px;
@@ -149,7 +149,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.addcvc {
+.addCvc {
   position: absolute;
   font-size: 1.3em;
   top: 90px;
@@ -177,7 +177,7 @@ ul {
   margin-bottom: 150px;
 }
 
-.addnumberImput {
+.addNumberInput {
   display: grid;
 }
 
@@ -205,7 +205,7 @@ ul {
   box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
 }
 
-.addnameInput {
+.addNameInput {
   display: grid;
 }
 .card-label2 {
@@ -335,7 +335,7 @@ ul {
   box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
 }
 
-.addvendor {
+.addVendor {
   display: grid;
 }
 
@@ -365,7 +365,7 @@ ul {
   box-shadow: 0 0 0.3rem rgb(0 123 255 / 100%);
 }
 
-.addbutton {
+.addButton {
   display: grid;
   justify-self: center;
 }
@@ -390,7 +390,7 @@ ul {
   background-color: #1645df;
 }
 
-.activecard4 {
+.activeCard4 {
   max-width: 450px;
   max-height: 284px;
   margin: auto;
@@ -404,7 +404,7 @@ ul {
   transform-style: preserve-3d;
 }
 
-.activecard4:after {
+.activeCard4:after {
   position: absolute;
   border-radius: 20px;
   top: 0px;
@@ -421,16 +421,16 @@ ul {
   transform: translateX(-100%);
 }
 
-.activecard4:hover {
+.activeCard4:hover {
   transform: rotateZ(-2deg);
 }
 
-.activecard4:hover:after {
+.activeCard4:hover:after {
   transform: translateX(100%);
   transition: all 1.2s ease-in-out;
 }
 
-.activecard3 {
+.activeCard3 {
   max-width: 450px;
   max-height: 284px;
   margin: auto;
@@ -442,7 +442,7 @@ ul {
   box-shadow: 0 30px 60px 0 rgb(90 116 148 / 70%);
 }
 
-.activecard3:after {
+.activeCard3:after {
   position: absolute;
   border-radius: 20px;
   top: 0px;
@@ -459,16 +459,16 @@ ul {
   transform: translateX(-100%);
 }
 
-.activecard3:hover {
+.activeCard3:hover {
   transform: rotate3D(10, 0, -10, 5deg);
 }
 
-.activecard3:hover:after {
+.activeCard3:hover:after {
   transform: translateX(100%);
   transition: all 1.2s ease-in-out;
 }
 
-.activecard2 {
+.activeCard2 {
   max-width: 450px;
   max-height: 284px;
   margin: auto;
@@ -480,7 +480,7 @@ ul {
   box-shadow: 0 30px 60px 0 rgb(90 116 148 / 70%);
 }
 
-.activecard2:after {
+.activeCard2:after {
   position: absolute;
   border-radius: 20px;
   top: 0px;
@@ -497,16 +497,16 @@ ul {
   transform: translateX(-100%);
 }
 
-.activecard2:hover {
+.activeCard2:hover {
   transform: rotate3D(10, 0, -10, 5deg);
 }
 
-.activecard2:hover:after {
+.activeCard2:hover:after {
   transform: translateX(100%);
   transition: all 1.2s ease-in-out;
 }
 
-.activecard1 {
+.activeCard1 {
   max-width: 450px;
   max-height: 284px;
   margin: auto;
@@ -518,7 +518,7 @@ ul {
   box-shadow: 0 30px 60px 0 rgb(90 116 148 / 70%);
 }
 
-.activecard1:after {
+.activeCard1:after {
   position: absolute;
   border-radius: 20px;
   top: 0px;
@@ -535,11 +535,11 @@ ul {
   transform: translateX(-100%);
 }
 
-.activecard1:hover {
+.activeCard1:hover {
   transform: rotate3D(10, 0, -10, 5deg);
 }
 
-.activecard1:hover:after {
+.activeCard1:hover:after {
   transform: translateX(100%);
   transition: all 1.2s ease-in-out;
 }
@@ -596,7 +596,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.activeCardcvc1 {
+.activeCardCvc1 {
   position: absolute;
   top: 275px;
   right: 225px;
@@ -655,7 +655,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.activeCardcvc2 {
+.activeCardCvc2 {
   position: absolute;
   top: 275px;
   right: 225px;
@@ -714,7 +714,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.activeCardcvc3 {
+.activeCardCvc3 {
   position: absolute;
   top: 275px;
   right: 225px;
@@ -773,7 +773,7 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
-.activeCardcvc4 {
+.activeCardCvc4 {
   position: absolute;
   top: 275px;
   right: 225px;
@@ -840,13 +840,13 @@ ul {
   display: none;
 }
 
-.E-Wallet-H1 {
+.e-wallet-h1 {
   font-size: 3em;
   margin-top: 10%;
   font-family: castellar;
 }
 
-.E-Wallet-Click-Button {
+.e-wallet-click-button {
   margin-top: 100px;
   width: 375px;
   height: 50px;
@@ -859,11 +859,11 @@ ul {
   box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
 
-.E-Wallet-Click-Button:hover {
+.e-wallet-click-button:hover {
   background-color: #1645df;
 }
 
-.Add-Card-Button {
+.add-card-button {
   margin-top: 10px;
   width: 300px;
   height: 40px;
@@ -876,36 +876,36 @@ ul {
   box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
 
-.Add-Card-Button:hover {
+.add-card-button:hover {
   background-color: #1645df;
 }
 
-.Active-Card-H2 {
+.active-card-h2 {
   margin-top: 50px;
   margin-bottom: 30px;
   font-family: castellar;
 }
 
-.New-Card-H2 {
+.new-card-h2 {
   margin-top: 50px;
   margin-bottom: 0px;
   font-family: castellar;
 }
 
-.Inactive-Card-H2 {
+.inactive-card-h2 {
   margin-top: 80px;
   padding-top: 15px;
   font-family: castellar;
   border-top: 1px solid #bfddf7;
 }
 
-.Wallet-Full-P {
+.wallet-full-p {
   font-size: 1.2em;
   margin-top: 30px;
   font-family: castellar;
 }
 
-.Remove-Card-Button {
+.remove-card-button {
   position: relative;
   left: 300px;
   top: 35px;
@@ -917,6 +917,6 @@ ul {
   box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
 
-.Remove-Card-Button:hover {
+.remove-card-button:hover {
   background-color: #1645df;
 }

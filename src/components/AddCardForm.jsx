@@ -14,20 +14,18 @@ import cardBackFour from "../images/card4back.png";
 import cardBackFive from "../images/card5back.png";
 
 const AddCardForm = () => {
-  const { cardList2 } = useSelector((state) => state.api);
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const { cardList2 } = useSelector((state) => state.api);
+  const cardHolderFirst = cardList2.results[0].name.first;
+  const cardHolderLast = cardList2.results[0].name.last;
   const [cardNumber, setCardNumber] = useState("");
-
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
-  const cardHolderFirst = cardList2.results[0].name.first;
-  const cardHolderLast = cardList2.results[0].name.last;
 
-  const formatAndSetcardNumber = (e) => {
+  const formatAndSetCardNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, "");
     let inputNumbersOnly = inputVal.replace(/\D/g, "");
     if (inputNumbersOnly.length === 16) {
@@ -51,7 +49,7 @@ const AddCardForm = () => {
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor
+        vendor: vendor,
       })
     );
     history.push("/wallet");
@@ -60,7 +58,7 @@ const AddCardForm = () => {
   return (
     <form onSubmit={onSubmit}>
       {/* Kort box där all info skrivs ut */}
-      <h2 className="New-Card-H2">New card</h2>
+      <h2 className="new-card-h2">New card</h2>
       {/* const select =  */}
       <div className="container-card" id="cardBox">
         <div className="card-container">
@@ -77,15 +75,15 @@ const AddCardForm = () => {
               ) : (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               )}
-              <p className="addcardNumber">{cardNumber}</p>
+              <p className="addCardNumber">{cardNumber}</p>
               <p
-                className="addcardHolderName"
+                className="addCardHolderName"
                 style={{ textTransform: "uppercase" }}
               >
                 {cardHolderFirst} {cardHolderLast}
               </p>
               <p className="addValidMonth">{validMonth}</p>
-              <p className="addvalidYear">{validYear}</p>
+              <p className="addValidYear">{validYear}</p>
             </section>
             <section className="back">
               {vendor === "Hederlig Banking" ? (
@@ -124,14 +122,14 @@ const AddCardForm = () => {
                   width="450px"
                 />
               )}
-              <p className="addcvc">{cvc}</p>
+              <p className="addCvc">{cvc}</p>
             </section>
           </div>
         </div>
       </div>
 
       <div className="addInputs">
-        <div className="addnumberImput">
+        <div className="addNumberInput">
           {/* Box för att skriva numerna manuelt */}
           <label className="card-label1" htmlFor="numberInput">
             Card number
@@ -140,7 +138,7 @@ const AddCardForm = () => {
             className="card-input1"
             type="text"
             value={cardNumber}
-            onChange={formatAndSetcardNumber}
+            onChange={formatAndSetCardNumber}
             maxLength={19}
             minLength={19}
             required
@@ -149,7 +147,7 @@ const AddCardForm = () => {
 
         {/* Box för att skriva in namnet på ägaren av kortet */}
 
-        <div className="addnameInput">
+        <div className="addNameInput">
           <label className="card-label2" htmlFor="cardholdername">
             Card Holder
           </label>
@@ -272,7 +270,7 @@ const AddCardForm = () => {
           </div>
         </div>
         {/* Vendor dom kommer vara fantasi för att göra det lite mer personling för grupp 7 */}
-        <div className="addvendor">
+        <div className="addVendor">
           <label className="card-label6" htmlFor="vendor">
             Vendor
           </label>
@@ -302,7 +300,7 @@ const AddCardForm = () => {
             </option>
           </select>
         </div>
-        <div className="addbutton">
+        <div className="addButton">
           <button className="submit-button" type="submit">
             Submit
           </button>

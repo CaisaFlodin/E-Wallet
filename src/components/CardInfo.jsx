@@ -5,6 +5,7 @@ import cardFour from "../images/card4.png";
 import cardThree from "../images/card3.png";
 import cardTwo from "../images/card2.png";
 import cardOne from "../images/card1.png";
+
 const CardInfo = ({
   id,
   cardNumber,
@@ -13,7 +14,7 @@ const CardInfo = ({
   validMonth,
   validYear,
   cvc,
-  vendor
+  vendor,
 }) => {
   const dispatch = useDispatch();
   const handleActiveClick = () => {
