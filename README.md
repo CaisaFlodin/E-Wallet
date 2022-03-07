@@ -1,14 +1,32 @@
-Oscar:
-Added, Route-comp
-Gjorde klart addCard sidan formuläret, när man ska tycka på Add card på Startsidan så ska man komma till den sidan för att skapa ett nytt kort.
+Project E-Wallet
+Made by:
+Andreé Köhlner
+Caisa Flodin
+Asami Jönsson
+Oscar Hederlig
 
-Andrée
-La till provider och store i index.css, samt la till redux map - 21/2-22
-La till start kod i configureStore.js som länkar till cardSlice.js 21/2-22
+Text follow in Swedish
 
-Caisa
-Gjort klart cardSlice.js
-Gjort klart configureStore
+Projektarbete - E-wallet
+Beskrivning: Du ska skapa en applikation där användaren kan hantera olika betalkort. Användaren ska kunna ha upp till max 4 kort, och måste alltid minst ha ett kort i sin e-wallet. Tekniker du ska använda i denna app är följande:
 
-Asami:
-test
+Create-react-app
+Inherited properties ( props )
+State
+Redux
+De-structuring
+Array methods (map, sort, etc.)
+React Router
+Life Cycle Hooks
+API calls (VG)
+Applikationen ska ha två routes (du får ändra namnet på dessa om du vill) :
+
+/home
+Högst upp ska du visa ett aktivt kort.
+Om användaren har fler kort, ska dessa finnas listade under det aktiva kortet.
+Det ska finnas en Add new card -knapp, som routar användaren vidare till /addcard.
+Vid klick på kort i listan så ska den läggas som active card högst upp i vyn.
+/addcard
+Ett nytt kort ska kunna läggas till med följande information: Vendor, card number, cardholder, expire month, expire year, CCV. (Se bild nedan).
+För kortutgivare ska du hårdkoda in minst tre alternativ man kan välja mellan. Den användaren väljer ska stå på kortet uppe till höger (t.ex. Mastercard, Visa, American Express etc. Eller om ni vill hitta på något roligare!).
+Högst upp ska en förhandsvisning av kortet finnas, som uppdateras automatiskt när användare fyller i informationen.
