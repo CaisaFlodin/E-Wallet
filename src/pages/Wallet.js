@@ -1,8 +1,14 @@
-import Cards from "../components/Cards";
 import { useSelector } from "react-redux";
+import Cards from "../components/Cards";
+
 const Wallet = () => {
-  const { api } = useSelector((state) => state.cards);
-  console.log(api);
-  return <Cards />;
+  const { status2 } = useSelector((state) => state.api);
+
+  return (
+    <div>
+      <p>{status2}</p>
+      {status2 === null ? <Cards /> : null}
+    </div>
+  );
 };
 export default Wallet;

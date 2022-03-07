@@ -1,14 +1,12 @@
 import CardInfo from "./CardInfo";
 const Card = (props) => {
-  console.log(props.card.cardHolderName);
-  console.log(props.activeObj);
-
   return (
     <>
       {props.activeObj !== props.card.id ? (
         <CardInfo
           cardNumber={props.card.cardNumber}
-          cardHolderName={props.card.cardHolderName}
+          cardHolderFirst={props.card.cardHolderFirst}
+          cardHolderLast={props.card.cardHolderLast}
           validMonth={props.card.validMonth}
           validYear={props.card.validYear}
           cvc={props.card.cvc}

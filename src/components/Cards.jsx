@@ -1,7 +1,7 @@
-import Card from "./Card";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getInfo } from "../redux/slices/cardSlice";
+import { getName } from "../redux/slices/nameSlice";
+import Card from "./Card";
 import cardFive from "../images/card5.png";
 import cardFour from "../images/card4.png";
 import cardThree from "../images/card3.png";
@@ -11,9 +11,8 @@ import cardOne from "../images/card1.png";
 const Cards = () => {
   const dispatch = useDispatch();
 
-  const { cardList, activeObj, api } = useSelector((state) => state.cards);
+  const { cardList, activeObj } = useSelector((state) => state.cards);
 
-  console.log(api);
   return (
     <>
       <div>
@@ -38,7 +37,7 @@ const Cards = () => {
                 className="activeCardNam1"
                 style={{ textTransform: "uppercase" }}
               >
-                {cardList[0].cardHolderName}
+                {cardList[0].cardHolderFirst} {cardList[0].cardHolderLast}
               </p>
               <p className="activeCardMonth1"> {cardList[0].validMonth}</p>
               <p className="activeCardYear1"> {cardList[0].validYear}</p>
@@ -63,7 +62,7 @@ const Cards = () => {
                 className="activeCardNam2"
                 style={{ textTransform: "uppercase" }}
               >
-                {cardList[1].cardHolderName}
+                {cardList[1].cardHolderFirst} {cardList[1].cardHolderLast}
               </p>
               <p className="activeCardMonth2"> {cardList[1].validMonth}</p>
               <p className="activeCardYear2"> {cardList[1].validYear}</p>
@@ -88,7 +87,7 @@ const Cards = () => {
                 className="activeCardNam3"
                 style={{ textTransform: "uppercase" }}
               >
-                {cardList[2].cardHolderName}
+                {cardList[2].cardHolderFirst} {cardList[2].cardHolderLast}
               </p>
               <p className="activeCardMonth3"> {cardList[2].validMonth}</p>
               <p className="activeCardYear3"> {cardList[2].validYear}</p>
@@ -113,7 +112,7 @@ const Cards = () => {
                 className="activeCardNam4"
                 style={{ textTransform: "uppercase" }}
               >
-                {cardList[3].cardHolderName}
+                {cardList[3].cardHolderFirst} {cardList[3].cardHolderLast}
               </p>
               <p className="activeCardMonth4"> {cardList[3].validMonth}</p>
               <p className="activeCardYear4"> {cardList[3].validYear}</p>
@@ -132,7 +131,7 @@ const Cards = () => {
           <Link to={"/addCard"} className="button_1">
             <button
               onClick={() => {
-                dispatch(getInfo());
+                dispatch(getName());
               }}
             >
               Add a new card

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewCard } from "../redux/slices/cardSlice";
 import { useHistory } from "react-router-dom";
@@ -14,21 +14,19 @@ import cardBackFour from "../images/card4back.png";
 import cardBackFive from "../images/card5back.png";
 
 const AddCardForm = () => {
-  const { api } = useSelector((state) => state.cards);
+  const { cardList2 } = useSelector((state) => state.api);
   const dispatch = useDispatch();
   const history = useHistory();
-  useEffect(() => {
-    console.log(api);
-  });
+
   const [cardNumber, setCardNumber] = useState("");
-  // const [cardHolderName, setCardHolderName] = useState("");
+
   const [validMonth, setVaildMonth] = useState("");
   const [validYear, setVaildYear] = useState("");
   const [cvc, setCvc] = useState();
   const [vendor, setVendor] = useState("");
-  const fName = api.results[0].name.first;
-  const lName = api.results[0].name.last;
-  const cardHolderName = fName + " " + lName;
+  const cardHolderFirst = cardList2.results[0].name.first;
+  const cardHolderLast = cardList2.results[0].name.last;
+
   const formatAndSetcardNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, "");
     let inputNumbersOnly = inputVal.replace(/\D/g, "");
@@ -48,7 +46,8 @@ const AddCardForm = () => {
     dispatch(
       addNewCard({
         cardNumber: cardNumber,
-        cardHolderName: cardHolderName,
+        cardHolderFirst: cardHolderFirst,
+        cardHolderLast: cardHolderLast,
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
@@ -84,7 +83,7 @@ const AddCardForm = () => {
                 className="addcardHolderName"
                 style={{ textTransform: "uppercase" }}
               >
-                {cardHolderName}
+                {cardHolderFirst} {cardHolderLast}
               </p>
               <p className="addValidMonth">{validMonth}</p>
               <p className="addvalidYear">{validYear}</p>
@@ -162,9 +161,8 @@ const AddCardForm = () => {
             id="cardholdername"
             style={{ textTransform: "uppercase" }}
             disabled
-            
-            value={cardHolderName}
-            placeholder={cardHolderName}
+            value={cardHolderFirst + " " + cardHolderLast}
+            placeholder={cardHolderFirst}
           />
         </div>
 

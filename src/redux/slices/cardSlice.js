@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-export const getInfo = createAsyncThunk("todoList/getTodos", async () => {
+export const getInfo = createAsyncThunk("cardList", async () => {
   let response = await fetch("https://randomuser.me/api/");
   let json = await response.json();
   console.log(json);
@@ -14,9 +14,10 @@ const cardSlice = createSlice({
       {
         gender: "male",
         id: 1,
-        cardHolderName: "Kenan Akaydın",
+        cardHolderFirst: "Kenan ",
+        cardHolderLast: "Akaydın",
 
-        cardNumber: "1111 1111 1556 1111",
+        cardNumber: "1987 1345 1556 1341",
         validMonth: "12 /",
         validYear: 23,
         cvc: 123,
@@ -24,7 +25,7 @@ const cardSlice = createSlice({
       },
     ],
     activeObj: 1,
-    api: [],
+
     status: null,
   },
 
@@ -33,7 +34,8 @@ const cardSlice = createSlice({
     addNewCard: (state, action) => {
       const newCard = {
         cardNumber: action.payload.cardNumber,
-        cardHolderName: action.payload.cardHolderName,
+        cardHolderFirst: action.payload.cardHolderFirst,
+        cardHolderLast: action.payload.cardHolderLast,
         validMonth: action.payload.validMonth,
         validYear: action.payload.validYear,
         cvc: action.payload.cvc,
@@ -60,7 +62,8 @@ const cardSlice = createSlice({
   },
   extraReducers: {
     [getInfo.fulfilled]: (state, action) => {
-      state.api = action.payload;
+      state.cardList[0].cardHolderFirst = action.payload.results[0].name.first;
+      state.cardList[0].cardHolderLast = action.payload.results[0].name.last;
       state.status = null;
     },
     [getInfo.pending]: (state) => {

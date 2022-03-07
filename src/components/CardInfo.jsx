@@ -8,7 +8,8 @@ import cardOne from "../images/card1.png";
 const CardInfo = ({
   id,
   cardNumber,
-  cardHolderName,
+  cardHolderFirst,
+  cardHolderLast,
   validMonth,
   validYear,
   cvc,
@@ -47,7 +48,7 @@ const CardInfo = ({
             className="cardHolderName4"
             style={{ textTransform: "uppercase" }}
           >
-            {cardHolderName}
+            {cardHolderFirst} {cardHolderLast}
           </li>
           <li className="validMonth4">{validMonth}</li>
           <li className="validYear4">{validYear}</li>
