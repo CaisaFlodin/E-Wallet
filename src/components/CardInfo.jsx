@@ -13,7 +13,7 @@ const CardInfo = ({
   validMonth,
   validYear,
   cvc,
-  vendor,
+  vendor
 }) => {
   const dispatch = useDispatch();
   const handleActiveClick = () => {
@@ -25,36 +25,40 @@ const CardInfo = ({
   };
 
   return (
-    <div className="container" id="container">
-      <ul className="card4">
-        <div onClick={handleActiveClick}>
-          {vendor === "Hederlig Banking" ? (
-            <img className="cardImg" src={cardFour} alt="" width="450px" />
-          ) : vendor === "KANO" ? (
-            <img className="cardImg" src={cardThree} alt="" width="450px" />
-          ) : vendor === "FlodInvest" ? (
-            <img className="cardImg" src={cardTwo} alt="" width="450px" />
-          ) : vendor === "AK Banking" ? (
-            <img className="cardImg" src={cardOne} alt="" width="450px" />
-          ) : vendor === "blank-bank" ? (
-            <img className="cardImg" src={cardFive} alt="" width="450px" />
-          ) : null}
-        </div>
+    <div>
+      <div className="container" id="container">
+        <ul className="card4">
+          <div onClick={handleActiveClick}>
+            {vendor === "Hederlig Banking" ? (
+              <img className="cardImg" src={cardFour} alt="" width="450px" />
+            ) : vendor === "KANO" ? (
+              <img className="cardImg" src={cardThree} alt="" width="450px" />
+            ) : vendor === "FlodInvest" ? (
+              <img className="cardImg" src={cardTwo} alt="" width="450px" />
+            ) : vendor === "AK Banking" ? (
+              <img className="cardImg" src={cardOne} alt="" width="450px" />
+            ) : vendor === "blank-bank" ? (
+              <img className="cardImg" src={cardFive} alt="" width="450px" />
+            ) : null}
+          </div>
 
-        <div>
-          <button onClick={handleRemoveClick}>Remove Card</button>
-          <li className="cardNumber4">{cardNumber}</li>
-          <li
-            className="cardHolderName4"
-            style={{ textTransform: "uppercase" }}
-          >
-            {cardHolderFirst} {cardHolderLast}
-          </li>
-          <li className="validMonth4">{validMonth}</li>
-          <li className="validYear4">{validYear}</li>
-          <li className="cvc4">{cvc}</li>
-        </div>
-      </ul>
+          <div>
+            <li className="cardNumber4">{cardNumber}</li>
+            <li
+              className="cardHolderName4"
+              style={{ textTransform: "uppercase" }}
+            >
+              {cardHolderFirst} {cardHolderLast}
+            </li>
+            <li className="validMonth4">{validMonth}</li>
+            <li className="validYear4">{validYear}</li>
+            <li className="cvc4">{cvc}</li>
+          </div>
+        </ul>
+      </div>
+      <button className="Remove-Card-Button" onClick={handleRemoveClick}>
+        Remove Card
+      </button>
     </div>
   );
 };

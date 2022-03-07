@@ -16,10 +16,10 @@ const Cards = () => {
   return (
     <>
       <div>
-        <h2>This card is Active</h2>
+        <h2 className="Active-Card-H2">Active Card</h2>
         <div>
           {activeObj === cardList[0].id ? (
-            <div className="card4">
+            <div className="activecard4">
               {cardList[0].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[0].vendor === "Hederlig Banking" ? (
@@ -44,7 +44,7 @@ const Cards = () => {
               <p className="activeCardcvc1">{cardList[0].cvc}</p>
             </div>
           ) : activeObj === cardList[1].id ? (
-            <div className="card3">
+            <div className="activecard3">
               {cardList[1].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[1].vendor === "Hederlig Banking" ? (
@@ -69,7 +69,7 @@ const Cards = () => {
               <p className="activeCardcvc2">{cardList[1].cvc}</p>
             </div>
           ) : activeObj === cardList[2].id ? (
-            <div className="card2">
+            <div className="activecard2">
               {cardList[2].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[2].vendor === "Hederlig Banking" ? (
@@ -94,7 +94,7 @@ const Cards = () => {
               <p className="activeCardcvc3">{cardList[2].cvc}</p>
             </div>
           ) : activeObj === cardList[3].id ? (
-            <div className="card1">
+            <div className="activecard1">
               {cardList[3].vendor === "blank-bank" ? (
                 <img className="cardImg" src={cardFive} alt="" width="450px" />
               ) : cardList[3].vendor === "Hederlig Banking" ? (
@@ -120,16 +120,11 @@ const Cards = () => {
             </div>
           ) : null}
         </div>
-        {cardList.map((card, i) => {
-          return (
-            <div key={i}>
-              <Card card={card} activeObj={activeObj} />
-            </div>
-          );
-        })}
+        <h2 className="Inactive-Card-H2">Inactive Cards</h2>
         {cardList.length <= 3 ? (
-          <Link to={"/addCard"} className="button_1">
+          <Link to={"/addCard"}>
             <button
+              className="Add-Card-Button"
               onClick={() => {
                 dispatch(getName());
               }}
@@ -138,8 +133,17 @@ const Cards = () => {
             </button>
           </Link>
         ) : (
-          <p>Your wallet have the maximum amount of four cards.</p>
+          <p className="Wallet-Full-P">
+            Your wallet have the maximum amount of four cards.
+          </p>
         )}
+        {cardList.map((card, i) => {
+          return (
+            <div key={i}>
+              <Card card={card} activeObj={activeObj} />
+            </div>
+          );
+        })}
       </div>
     </>
   );

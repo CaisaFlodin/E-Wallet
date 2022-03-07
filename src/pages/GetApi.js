@@ -5,7 +5,7 @@ const GetApi = () => {
   const { status } = useSelector((state) => state.cards);
   return (
     <>
-      <h1>E-Wallet App </h1>
+      <h1 className="E-Wallet-H1">E-Wallet App </h1>
 
       <p>{status}</p>
 

@@ -51,7 +51,7 @@ const AddCardForm = () => {
         validMonth: validMonth,
         validYear: validYear,
         cvc: cvc,
-        vendor: vendor,
+        vendor: vendor
       })
     );
     history.push("/wallet");
@@ -60,8 +60,7 @@ const AddCardForm = () => {
   return (
     <form onSubmit={onSubmit}>
       {/* Kort box där all info skrivs ut */}
-      <h1>Add a new card</h1>
-      <h5>New card</h5>
+      <h2 className="New-Card-H2">New card</h2>
       {/* const select =  */}
       <div className="container-card" id="cardBox">
         <div className="card-container">

@@ -15,13 +15,14 @@ const Homepage = () => {
 
   return (
     <>
-      <h1>E-Wallet App </h1>
+      <h1 className="E-Wallet-H1">E-Wallet App </h1>
 
       <p>{status}</p>
 
       {status === null ? (
         <Link to={"/wallet"}>
           <button
+            className="E-Wallet-Click-Button"
             onClick={() => {
               dispatch(getInfo());
               dispatch(getName());
