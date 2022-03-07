@@ -905,7 +905,7 @@ ul {
   font-family: castellar;
 }
 
-.remove-card-button {
+.Remove-Card-Button {
   position: relative;
   left: 300px;
   top: 35px;
@@ -917,6 +917,6 @@ ul {
   box-shadow: 0 5px 10px 0 rgb(90 116 148 / 90%);
 }
 
-.remove-card-button:hover {
+.Remove-Card-Button:hover {
   background-color: #1645df;
 }
